@@ -1,11 +1,15 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import HomePage from '../components/homePage';
+import WelcomeAppBar from '../components/welcome';
+import Form from '../components/Form';
 
 export default function Home() {
+  
   return (
-    <div style={{color:"black", textAlign:"center"}}>
-      Virtual TA home page!
+    <div className='main'>
+      <WelcomeAppBar/>
+      <Form />
+      {/* <HomePage sx={{zIndex:0}}/> */}
+      
     </div>
   )
 }
