@@ -1,5 +1,5 @@
-import HomePage from '../components/homePage';
-import WelcomeAppBar from '../components/welcome';
+import HomePage from '../components/HomePage';
+import WelcomeAppBar from '../components/AppBar';
 import Form from '../components/Form';
 
 export default function Home() {
