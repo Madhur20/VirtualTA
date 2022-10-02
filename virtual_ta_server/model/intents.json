@@ -1,0 +1,30 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Hi",
+        "Hey",
+        "How are you",
+        "Is anyone there?",
+        "Hello",
+        "Good day"  
+      ],
+      "responses": [
+        "Hey :-)",
+        "Hello, thanks for visiting",
+        "Hi there, what can I do for you?",
+        "Hi there, how can I help?"
+      ]
+    },
+    {
+      "tag": "TimeComplexity",
+      "patterns": [
+        "What is the time complexity of the merge sort algorithm?" 
+      ],
+      "responses": [
+        "Time complexity of the merge sort algorithm is O(nlogn)"
+      ]
+    }
+  ]
+}
