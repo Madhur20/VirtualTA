@@ -25,6 +25,91 @@
       "responses": [
         "Time complexity of the merge sort algorithm is O(nlogn)"
       ]
+    },
+    {
+      "tag": "LinearSearchTimeComplexity",
+      "patterns": [
+        "What is the time complexity of the Linear Search algorithm?",
+        "time complexity linear search",
+        "linear search complexity time",
+        "time complexity of linear search" 
+      ],
+      "responses": [
+        "Time complexity of the Linear Search algorithm is O(n)",
+        "Linear Search has a time complexity of O(n)."
+      ]
+    },
+    {
+      "tag": "LinearSearchHowDoesWork",
+      "patterns": [
+        "How does linear search work",
+        "linear search explination",
+        "explain linear search",
+        "define linear search",
+        "what is linear search"
+      ],
+      "responses": [
+        "Linear Search (Also known as Sequential Search) is a basic search technique where you go through a list and check if an element matches the value you are searching for. It returns the index of the match if there is one."
+      ]
+    },
+    {
+      "tag": "LinearSearchCompare",
+      "patterns": [
+        "Compare linear search with binary search",
+        "linear search vs binary search",
+        "difference between linear and binary search",
+        "diff between linear and binary search",
+        "binary vs linear search",
+        "contrasting binary search and linear search"
+      ],
+      "responses": [
+        "Linear search does not require data to be sorted while binary search does. Time complexity of linear search is O(n) while binary search has a O(log n). Linear search is simplier to use. Binary search is faster. Linear search can be used in multidimensional arrays."
+      ]
+    },
+
+    {
+      "tag": "BubbleSortTimeComplexity",
+      "patterns": [
+        "What is the time complexity of the Bubble Sort algorithm?",
+        "time complexity Bubble Sort",
+        "Bubble Sort complexity time",
+        "time complexity of Bubble Sort" 
+      ],
+      "responses": [
+        "Time complexity of the Bubble Sort algorithm is Best: Ω(n) Average: Θ(n^2) Worst: O(n^2)",
+        "Bubble Sort has a time complexity of Best: Ω(n) Average: Θ(n^2) Worst: O(n^2)."
+      ]
+    },
+    {
+      "tag": "BubbleSortHowDoesWork",
+      "patterns": [
+        "How does Bubble Sort work",
+        "Bubble Sort explination",
+        "explain Bubble Sort",
+        "define Bubble Sort",
+        "what is Bubble Sort"
+      ],
+      "responses": [
+        "Bubble Sort is a basic sorting algorithm. If adjacent elements are in the wrong order then the elements positions are swapped. This sorting algorithm is not recommended for large datasets as its average and worst cases are slow."
+      ]
+    },
+    {
+      "tag": "BubbleSortCompare",
+      "patterns": [
+        "Compare Bubble Sort with other sorts",
+        "Bubble Sort vs other sorts",
+        "difference between bubble sort and other sorts",
+        "diff between bubble and other sorts",
+        "sorts vs Bubble Sort",
+        "contrasting sorts and Bubble Sort",
+	  "Bubble Sort vs selection sort."
+      ],
+      "responses": [
+        "Bubble Sort is a simple sorting techinque and is able to detect if a list is already sorted. It can be faster than other sorts if the list is already sorted."
+      ]
     }
+
+
+
   ]
 }
