@@ -35,8 +35,8 @@
         "time complexity of linear search" 
       ],
       "responses": [
-        "Time complexity of the Linear Search algorithm is O(n)",
-        "Linear Search has a time complexity of O(n)."
+        "Time complexity of the Linear Search algorithm is O(n). This is because it is going through the list until it finds the element it is searching for.",
+        "Linear Search has a time complexity of O(n). This is because it is going through the list until it finds the element it is searching for."
       ]
     },
     {
@@ -73,18 +73,20 @@
         "What is the time complexity of the Bubble Sort algorithm?",
         "time complexity Bubble Sort",
         "Bubble Sort complexity time",
-        "time complexity of Bubble Sort" 
+        "time complexity of Bubble Sort",
+        "Big O of Bubble sort",
+        "Bubble sort big O"
       ],
       "responses": [
-        "Time complexity of the Bubble Sort algorithm is Best: Ω(n) Average: Θ(n^2) Worst: O(n^2)",
-        "Bubble Sort has a time complexity of Best: Ω(n) Average: Θ(n^2) Worst: O(n^2)."
+        "Time complexity of the Bubble Sort algorithm is Best: Ω(n) Average: Θ(n^2) Worst: O(n^2). It contains two loops which is why it is n * n",
+        "Bubble Sort has a time complexity of Best: Ω(n) Average: Θ(n^2) Worst: O(n^2). It contains two loops which is why it is n * n"
       ]
     },
     {
       "tag": "BubbleSortHowDoesWork",
       "patterns": [
         "How does Bubble Sort work",
-        "Bubble Sort explination",
+        "Bubble Sort explaination",
         "explain Bubble Sort",
         "define Bubble Sort",
         "what is Bubble Sort"
@@ -101,15 +103,53 @@
         "difference between bubble sort and other sorts",
         "diff between bubble and other sorts",
         "sorts vs Bubble Sort",
-        "contrasting sorts and Bubble Sort",
-	  "Bubble Sort vs selection sort."
+        "contrasting sorts and Bubble Sort"
       ],
       "responses": [
         "Bubble Sort is a simple sorting techinque and is able to detect if a list is already sorted. It can be faster than other sorts if the list is already sorted."
       ]
+    },
+
+    {
+      "tag": "BubbleSortTimeComplexity",
+      "patterns": [
+        "What is the time complexity of the Recursive Bubble Sort algorithm?",
+        "time complexity Recursive Bubble Sort",
+        "Recursive Bubble Sort complexity time",
+        "time complexity of Recursive Bubble Sort" 
+      ],
+      "responses": [
+        "Time complexity of the Recursive Bubble Sort algorithm is O(n * n) == O(n^2). The same function is called recursively for each element in the list. Inside the function it is looping till the length of the list. This makes it n * n which is O(n^2).",
+        "Recursive Bubble Sort has a time complexity of O(n * n) == O(n^2).  The same function is called recursively for each element in the list. Inside the function it is looping till the length of the list. This makes it n * n which is O(n^2)."
+      ]
+    },
+    {
+      "tag": "BubbleSortHowDoesWork",
+      "patterns": [
+        "How does Recursive Bubble Sort work",
+        "Recursive Bubble Sort explination",
+        "explain Recursive Bubble Sort",
+        "define Recursive Bubble Sort",
+        "what is Recursive Bubble Sort"
+      ],
+      "responses": [
+        "Recursive Bubble Sort is a basic sorting algorithm. If adjacent elements are in the wrong order then the elements positions are swapped. This algorithm will be using recursion which tends to be more difficult to trace compared to iteration."
+      ]
+    },
+    {
+      "tag": "BubbleSortCompare",
+      "patterns": [
+        "Compare Recursive Bubble Sort with other sorts",
+        "Recursive Bubble Sort vs other sorts",
+        "difference between Recursive Bubble Sort and other sorts",
+        "diff between bubble and other sorts",
+        "sorts vs Recursive Bubble Sort",
+        "contrasting sorts and Recursive Bubble Sort"
+      ],
+      "responses": [
+        "Recursive Bubble Sort is a simple sorting techinque and is able to detect if a list is already sorted. It can be faster than other sorts if the list is already sorted.Recursive bubble sort can be faster than iterative bubble sort even though the math is the same."
+      ]
     }
-
-
 
   ]
 }
