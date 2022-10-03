@@ -95,7 +95,7 @@
         "binary search"
       ],
       "responses": [
-        "Binary Search is a basic search technique that takes a sorted array and gradually minimizes the search parameters by finding the mid element of the whole array. It then uses this search key to compare to the value needing to be searched. If the value is lesser then the search key it minimizes to the lower half of the array, if it is greater it minimizes to the upper half of the array. The search repeats this process until it finds the desired value.
+        "Binary Search is a basic search technique that takes a sorted array and gradually minimizes the search parameters by finding the mid element of the whole array. It then uses this search key to compare to the value needing to be searched. If the value is lesser then the search key it minimizes to the lower half of the array, if it is greater it minimizes to the upper half of the array. The search repeats this process until it finds the desired value."
       ]
     },
     {
