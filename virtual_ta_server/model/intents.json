@@ -20,7 +20,9 @@
     {
       "tag": "TimeComplexity",
       "patterns": [
-        "What is the time complexity of the merge sort algorithm?" 
+        "What is the time complexity of the merge sort algorithm?" ,
+        "Time Complexity of merge sort"
+         
       ],
       "responses": [
         "Time complexity of the merge sort algorithm is O(nlogn)"
