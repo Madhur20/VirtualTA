@@ -61,12 +61,43 @@
         "diff between linear and binary search",
         "binary vs linear search",
         "contrasting binary search and linear search"
+        "Compare binary search with linear search",
+        "binary search vs linear search",
+        "difference between binary and linear search",
+        "diff between binary and linear search",
+        "linear vs binary search",
       ],
       "responses": [
         "Linear search does not require data to be sorted while binary search does. Time complexity of linear search is O(n) while binary search has a O(log n). Linear search is simplier to use. Binary search is faster. Linear search can be used in multidimensional arrays."
       ]
     },
-
+{
+      "tag": "BinarySearchTimeComplexity",
+      "patterns": [
+        "What is the time complexity of the Binary Search algorithm?",
+        "time complexity binary search",
+        "binary search complexity time",
+        "time complexity of binary search" 
+      ],
+      "responses": [
+        "Time complexity of the Binary Search algorithm is O(log n). This is because it takes sorted arrays and repeatedly divides the search interval in half.",
+        "Binary Search has a time complexity of O(log n). This is because it takes sorted arrays and repeatedly divides the search interval in half."
+      ]
+    },
+    {
+      "tag": "BinarySearchHowDoesWork",
+      "patterns": [
+        "How does binary search work",
+        "binary search explination",
+        "explain binary search",
+        "define binary search",
+        "what is binary search",
+        "binary search"
+      ],
+      "responses": [
+        "Binary Search is a basic search technique that takes a sorted array and gradually minimizes the search parameters by finding the mid element of the whole array. It then uses this search key to compare to the value needing to be searched. If the value is lesser then the search key it minimizes to the lower half of the array, if it is greater it minimizes to the upper half of the array. The search repeats this process until it finds the desired value.
+      ]
+    },
     {
       "tag": "BubbleSortTimeComplexity",
       "patterns": [
