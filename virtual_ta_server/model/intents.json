@@ -18,7 +18,51 @@
       ]
     },
     {
-      "tag": "TimeComplexity",
+      "tag": "SelectionSortTimeComplexity",
+      "patterns": [
+        "What is the time complexity of the Selection Sort algorithm?",
+        "time complexity Selection Sort",
+        "Selection Sort complexity time",
+        "time complexity of Selection Sort",
+        "Big O notation of selection Sort",
+        "Big O in selection sort"
+      ],
+      "responses": [
+        "The time complexity of Selection Sort is O(N^2) as there are two nested loops: One loop to select an element of Array one by one = O(N) and Another loop to compare that element with every other Array element = O(N) Therefore overall complexity = O(N) * O(N) = O(N*N) = O(N^2). Time complexity of the Selection Sort algorithm is Best: Ω(n^2) Average: Θ(n^2) Worst: O(n^2)"
+      ]
+    },
+    {
+      "tag": "SelectionSortHowDoesWork",
+      "patterns": [
+        "How does Selection Sort work",
+        "Selection Sort explination",
+        "explain Selection Sort",
+        "define Selection Sort",
+        "what is Selection Sort",
+        "Selection Sort"
+      ],
+      "responses": [
+        "Selection Sort is a basic sorting algorithm. The selection sort algorithm sorts an array by repeatedly finding the minimum element (considering ascending order) from the unsorted part and putting it at the beginning. The algorithm maintains two subarrays in a given array. The subarray which already sorted. and the remaining subarray was unsorted. In every iteration of the selection sort, the minimum element (considering ascending order) from the unsorted subarray is picked and moved to the sorted subarray. "
+      ]
+    },
+    {
+      "tag": "SelectionSortCompare",
+      "patterns": [
+        "Compare Selection Sort with other sorts",
+        "Selection Sort vs other sorts",
+        "difference between Selection sort and other sorts",
+        "diff between Selection and other sorts",
+        "sorts vs Selection Sort",
+        "contrasting sorts and Selection Sort",
+        "is selection sort bad",
+        "is selection sort good?"
+      ],
+      "responses": [
+        "Selection sort is a simple algorithm that is slow and not fast in comparison to bubble sort. However, it works well with a small list to be sorted and in cases where space is limited. This feature is attributed mainly due to the minimal swaps O(n) requiring very less space. However selection sort will perform identically regardless of the order the array, while Merge or insertion sort's running time can vary considerably. Insertion sort runs much more efficiently if the array is already sorted or close to sorted."
+      ]
+    },
+    {
+      "tag": "merge_sort",
       "patterns": [
         "What is the time complexity of the merge sort algorithm?" 
       ],
