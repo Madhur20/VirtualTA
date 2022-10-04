@@ -64,10 +64,45 @@
     {
       "tag": "merge_sort",
       "patterns": [
-        "What is the time complexity of the merge sort algorithm?" 
+        "What is the time complexity of the merge Sort algorithm?",
+        "time complexity merge Sort",
+        "merge Sort complexity time",
+        "time complexity of merge Sort",
+        "Big O notation of merge Sort",
+        "Big O in merge sort"
       ],
       "responses": [
-        "Time complexity of the merge sort algorithm is O(nlogn)"
+        "Time complexity of the merge sort algorithm is O(nlogn). Merge Sort separates the array in half and takes linear time to merge the two halves. Hence its time complexity is nLogn in all three scenarios (worst, average, and best). It divides the input array in half, makes two separate calls for each half, and then joins the two sorted halves. To combine two halves, use the merge() function. The merge(arr, l, m, r) critical process merges the two sorted sub-arrays into one,\t presuming that arr[l..m] and arr[m+1..r] is sorted. \tMergeSort(arr[], l, r)\t If r > l 1.\t Find the middle point to divide the array into two halves:\t middle m = (l+r)/2\t 2. Call mergeSort for the first half:\tCall mergeSort(arr, l, m)\t3. Call mergeSort for the second half:\tCall mergeSort(arr, m+1, r)\t4. Merge the two halves sorted in steps 2 and 3:\tCall merge(arr, l, m, r) "
+      ]
+    },
+    {
+      "tag": "mergeSortHowDoesWork",
+      "patterns": [
+        "How does merge Sort work",
+        "merge Sort explination",
+        "explain merge Sort",
+        "define merge Sort",
+        "what is merge Sort",
+        "merge Sort"
+      ],
+      "responses": [
+        "The Merge Sort algorithm is a sorting algorithm that is based on the Divide and Conquer paradigm. In this algorithm, the array is initially divided into two equal halves and then they are combined in a sorted manner. Think of it as a recursive algorithm continuously splits the array in half until it cannot be further divided. This means that if the array becomes empty or has only one element left, the dividing will stop, i.e. it is the base case to stop the recursion. If the array has multiple elements, split the array into halves and recursively invoke the merge sort on each of the halves. Finally, when both halves are sorted, the merge operation is applied. Merge operation is the process of taking two smaller sorted arrays and combining them to eventually make a larger one. "
+      ]
+    },
+    {
+      "tag": "mergeSortCompare",
+      "patterns": [
+        "Compare merge Sort with other sorts",
+        "merge Sort vs other sorts",
+        "difference between merge sort and other sorts",
+        "diff between merge and other sorts",
+        "sorts vs merge Sort",
+        "contrasting sorts and merge Sort",
+        "is merge sort bad",
+        "is merge sort good?"
+      ],
+      "responses": [
+        "Merge sort is more efficient and works faster than quick sort in case of larger array size or datasets. Quick sort is more efficient and works faster than merge sort in case of smaller array size or datasets. Sorting method : The quick sort is internal sorting method where the data is sorted in main memory. \n Selection sort may be faster than mergesort on small input arrays because it's a simpler algorithm with lower constant factors than the ones hidden by mergesort. If you're sorting, say, arrays of 16 or so elements, then selection sort might be faster than mergesort."
       ]
     },
     {
@@ -104,12 +139,12 @@
         "difference between linear and binary search",
         "diff between linear and binary search",
         "binary vs linear search",
-        "contrasting binary search and linear search"
+        "contrasting binary search and linear search",
         "Compare binary search with linear search",
         "binary search vs linear search",
         "difference between binary and linear search",
         "diff between binary and linear search",
-        "linear vs binary search",
+        "linear vs binary search"
       ],
       "responses": [
         "Linear search does not require data to be sorted while binary search does. Time complexity of linear search is O(n) while binary search has a O(log n). Linear search is simplier to use. Binary search is faster. Linear search can be used in multidimensional arrays."
