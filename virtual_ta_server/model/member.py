@@ -4,7 +4,7 @@ app = Flask(__name__)
 i = 5
 @app.route("/members")
 def member():
-    return hello("time complexity of merge sort")
+    return message("hello")
 
 
 if __name__ == "__main__":

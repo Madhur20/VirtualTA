@@ -27,7 +27,7 @@ model.eval()
 
 bot_name = "Sam"
 print("Let's chat! (type 'quit' to exit)")
-def hello(msg:str):
+def message(msg:str):
     while True:
         # sentence = "do you use credit cards?"
         sentence = msg
