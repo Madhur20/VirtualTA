@@ -116,7 +116,7 @@
       ]
     },
 {
-      "tag": "BinarySearchTimeComplexity",
+  "tag": "BinarySearchTimeComplexity",
       "patterns": [
         "What is the time complexity of the Binary Search algorithm?",
         "time complexity binary search",
@@ -186,7 +186,7 @@
     },
 
     {
-      "tag": "BubbleSortTimeComplexity",
+      "tag": "RecursiveBubbleSortTimeComplexity",
       "patterns": [
         "What is the time complexity of the Recursive Bubble Sort algorithm?",
         "time complexity Recursive Bubble Sort",
@@ -199,7 +199,7 @@
       ]
     },
     {
-      "tag": "BubbleSortHowDoesWork",
+      "tag": "RecursiveBubbleSortHowDoesWork",
       "patterns": [
         "How does Recursive Bubble Sort work",
         "Recursive Bubble Sort explination",
@@ -212,7 +212,7 @@
       ]
     },
     {
-      "tag": "BubbleSortCompare",
+      "tag": "RecursiveBubbleSortCompare",
       "patterns": [
         "Compare Recursive Bubble Sort with other sorts",
         "Recursive Bubble Sort vs other sorts",
@@ -224,7 +224,89 @@
       "responses": [
         "Recursive Bubble Sort is a simple sorting techinque and is able to detect if a list is already sorted. It can be faster than other sorts if the list is already sorted.Recursive bubble sort can be faster than iterative bubble sort even though the math is the same."
       ]
+    },
+  {
+      "tag": "InsertionSortTimeComplexity",
+      "patterns": [
+        "What is the time complexity of the Insertion Sort algorithm?",
+        "time complexity Insertion Sort",
+        "Insertion Sort complexity time",
+        "time complexity of Insertion Sort",
+        "Big O of Insertion sort",
+        "Insertion sort big O"
+      ],
+      "responses": [
+        "Time complexity of the Insertion Sort algorithm is Best: Ω(n) Average: θ(n^2) Worst: O(n^2). ",
+        "Insertion Sort has a time complexity of Best: Ω(n) Average: θ(n^2) Worst: O(n^2)."
+      ]
+    },
+    {
+      "tag": "InsertionSortHowDoesWork",
+      "patterns": [
+        "How does Insertion Sort work",
+        "Insertion Sort explaination",
+        "explain Insertion Sort",
+        "define Insertion Sort",
+        "what is Insertion Sort"
+      ],
+      "responses": [
+        "Insertion Sort is a basic sorting algorithm. It is most efficient when the data set is small. It goes through each data value and compares it to each other. Adjacent elements that are in the wrong order get swapped, the sort goes through this process until the entire data set is sorted. This sort is not recommended for larger data sets as it would take a tremendous amount of time to sort."
+      ]
+    },
+    {
+      "tag": "InsertionSortCompare",
+      "patterns": [
+        "Compare Insertion Sort with other sorts",
+        "Insertion Sort vs other sorts",
+        "difference between Insertion sort and other sorts",
+        "diff between Insertion and other sorts",
+        "sorts vs Insertion Sort",
+        "contrasting sorts and Insertion Sort"
+      ],
+      "responses": [
+        "Insertion Sort is a simple sorting techinque and is able to detect if a list is already sorted. It can be faster than other sorts if the list is already sorted."
+      ]
+    },
+    {
+      "tag": "RecursiveInsertionSortTimeComplexity",
+      "patterns": [
+        "What is the time complexity of the Recursive Insertion Sort algorithm?",
+        "time complexity Recursive Insertion Sort",
+        "Recursive Insertion Sort complexity time",
+        "time complexity of Recursive Insertion Sort",
+        "Big O of Recursive Insertion sort",
+        "Recursive Insertion sort big O"
+      ],
+      "responses": [
+        "Time complexity of the Recursive Insertion Sort algorithm is O(n*n) == O(n^2). This sort calls all the elements recursively in the list. The function loops till the length of the list."
+      ]
+    },
+    {
+      "tag": "RecursiveInsertionSortHowDoesWork",
+      "patterns": [
+        "How does Recursive Insertion Sort work",
+        "Recursive Insertion Sort explaination",
+        "explain Recursive Insertion Sort",
+        "define Recursive Insertion Sort",
+        "what is Recursive Insertion Sort"
+      ],
+      "responses": [
+        "Recursive Insertion Sort is a basic sorting algorithm. It is most efficient when the data set is small. It goes through each data value and compares it to each other. Adjacent elements that are in the wrong order get swapped, the sort goes through this process until the entire data set is sorted. This sort is not recommended for larger data sets as it would take a tremendous amount of time to sort. This version uses recursion which is more difficult to trace."
+      ]
+    },
+    {
+      "tag": "RecursiveInsertionSortCompare",
+      "patterns": [
+        "Compare Recursive Insertion Sort with other sorts",
+        "Recursive Insertion Sort vs other sorts",
+        "difference between Recursive Insertion sort and other sorts",
+        "diff between Recursive Insertion and other sorts",
+        "sorts vs Recursive Insertion Sort",
+        "contrasting sorts and Recursive Insertion Sort"
+      ],
+      "responses": [
+        "Recursive Insertion Sort is a simple sorting techinque and is able to detect if a list is already sorted. It can be faster than other sorts if the list is already sorted. This sort is can be faster then normal insertion sort."
+      ]
     }
-
   ]
 }
