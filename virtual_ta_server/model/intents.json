@@ -342,6 +342,90 @@
       "responses": [
         "Recursive Insertion Sort is a simple sorting techinque and is able to detect if a list is already sorted. It can be faster than other sorts if the list is already sorted. This sort is can be faster then normal insertion sort."
       ]
+    },
+    {
+      "tag": "QuickSearchTimeComplexity",
+      "patterns": [
+        "What is the time complexity of the Quick Search algorithm?",
+        "time complexity Quick search",
+        "Quick search complexity time",
+        "time complexity of Quick search" 
+      ],
+      "responses": [
+        "Time complexity of the Quick Search algorithm is Best: O(n*log n), Average:O(n*log n), and Worst: O(n^2)"
+      ]
+    },
+    {
+      "tag": "QuickSearchHowDoesWork",
+      "patterns": [
+        "How does Quick search work",
+        "Quick search explination",
+        "explain Quick search",
+        "define Quick search",
+        "what is Quick search",
+        "Quick search"
+      ],
+      "responses": [
+        "Quick Search is a divide and conquer algorithm, that picks and element as a pivot and partitions the array around that pivot. The pivots can be first, last, random, or median element. The algorithm then sorts around the pivot, if it is greater then the pivot it is on the right and if its less then its on the left."
+      ]
+    }
+{
+      "tag": "QuickSortCompare",
+      "patterns": [
+        "Compare Quick Sort with other sorts",
+        "Quick Sort vs other sorts",
+        "difference between Quick sort and other sorts",
+        "diff between Quick and other sorts",
+        "sorts vs Quick Sort",
+        "contrasting sorts and Quick Sort",
+        "is Quick sort bad",
+        "is Quick sort good?"
+      ],
+      "responses": [
+        "Quick sort is a complex algorithm that is mainly used in operational reserach and event-driven simulation. It is most used for numerical computations. Compared to other sorts this one is used for efficiently developing algorithms."
+      ]
+    },
+{
+      "tag": "IterativeQuickSearchTimeComplexity",
+      "patterns": [
+        "What is the time complexity of the Iterative Quick Search algorithm?",
+        "time complexity Iterative Quick search",
+        "Iterative Quick search complexity time",
+        "time complexity of Iterative Quick search" 
+      ],
+      "responses": [
+        "Time complexity of the Iterative Quick Search algorithm is Best: O(n*log (n)), Average:O(n*log n), and Worst: O(n^2)"
+      ]
+    },
+    {
+      "tag": "IterativeQuickSearchHowDoesWork",
+      "patterns": [
+        "How does Iterative Quick search work",
+        "Iterative Quick search explination",
+        "explain Iterative Quick search",
+        "define Iterative Quick search",
+        "what is Iterative Quick search",
+        "Iterative Quick search"
+      ],
+      "responses": [
+        "Iterative Quick Search is a divide and conquer algorithm, that picks and element as a pivot and partitions the array around that pivot. Since this version is iterative the pivot is only the last element. The algorithm then sorts around the pivot, if it is greater then the pivot it is on the right and if its less then its on the left."
+      ]
+    }
+{
+      "tag": "IterativeQuickSortCompare",
+      "patterns": [
+        "Compare Iterative Quick Sort with other sorts",
+        "Iterative Quick Sort vs other sorts",
+        "difference between Iterative Quick sort and other sorts",
+        "diff between Iterative Quick and other sorts",
+        "sorts vs Iterative Quick Sort",
+        "contrasting sorts and Iterative Quick Sort",
+        "is Iterative Quick sort bad",
+        "is Iterative Quick sort good?"
+      ],
+      "responses": [
+        "Iterative Quick sort is a complex algorithm that is mainly used in operational reserach and event-driven simulation. It is most used for numerical computations. Compared to other sorts this one is used for efficiently developing algorithms. Since this form is iterative it only uses last element as pivot."
+      ]
     }
   ]
 }
