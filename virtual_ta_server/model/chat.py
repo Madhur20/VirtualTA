@@ -25,7 +25,7 @@ model = NeuralNet(input_size, hidden_size, output_size).to(device)
 model.load_state_dict(model_state)
 model.eval()
 
-bot_name = "Playmaker"
+bot_name = "Your ChatBot"
 print("Let's chat! (type 'quit' to exit)")
 def message(msg:str):
     while True:
@@ -50,7 +50,7 @@ def message(msg:str):
         if prob.item() > 0.75:
             for intent in intents['intents']:
                 if tag == intent["tag"]:
-                    return str(f"{bot_name}: {random.choice(intent['responses'])}")
+                    return str(f"{random.choice(intent['responses'])}")
                     
         else:
-            return str(f"{bot_name}: I do not understand...")
+            return str(f"I do not understand...")

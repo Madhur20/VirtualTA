@@ -368,7 +368,7 @@
       "responses": [
         "Quick Search is a divide and conquer algorithm, that picks and element as a pivot and partitions the array around that pivot. The pivots can be first, last, random, or median element. The algorithm then sorts around the pivot, if it is greater then the pivot it is on the right and if its less then its on the left."
       ]
-    }
+    },
 {
       "tag": "QuickSortCompare",
       "patterns": [
@@ -410,7 +410,7 @@
       "responses": [
         "Iterative Quick Search is a divide and conquer algorithm, that picks and element as a pivot and partitions the array around that pivot. Since this version is iterative the pivot is only the last element. The algorithm then sorts around the pivot, if it is greater then the pivot it is on the right and if its less then its on the left."
       ]
-    }
+    },
 {
       "tag": "IterativeQuickSortCompare",
       "patterns": [
