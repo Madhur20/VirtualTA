@@ -18,12 +18,413 @@
       ]
     },
     {
-      "tag": "TimeComplexity",
+      "tag": "SelectionSortTimeComplexity",
       "patterns": [
-        "What is the time complexity of the merge sort algorithm?" 
+        "What is the time complexity of the Selection Sort algorithm?",
+        "time complexity Selection Sort",
+        "Selection Sort complexity time",
+        "time complexity of Selection Sort",
+        "Big O notation of selection Sort",
+        "Big O in selection sort"
       ],
       "responses": [
-        "Time complexity of the merge sort algorithm is O(nlogn)"
+        "The time complexity of Selection Sort is O(N^2) as there are two nested loops: One loop to select an element of Array one by one = O(N) and Another loop to compare that element with every other Array element = O(N) Therefore overall complexity = O(N) * O(N) = O(N*N) = O(N^2). Time complexity of the Selection Sort algorithm is Best: Ω(n^2) Average: Θ(n^2) Worst: O(n^2)"
+      ]
+    },
+    {
+      "tag": "SelectionSortHowDoesWork",
+      "patterns": [
+        "How does Selection Sort work",
+        "Selection Sort explination",
+        "explain Selection Sort",
+        "define Selection Sort",
+        "what is Selection Sort",
+        "Selection Sort"
+      ],
+      "responses": [
+        "Selection Sort is a basic sorting algorithm. The selection sort algorithm sorts an array by repeatedly finding the minimum element (considering ascending order) from the unsorted part and putting it at the beginning. The algorithm maintains two subarrays in a given array. The subarray which already sorted. and the remaining subarray was unsorted. In every iteration of the selection sort, the minimum element (considering ascending order) from the unsorted subarray is picked and moved to the sorted subarray. "
+      ]
+    },
+    {
+      "tag": "SelectionSortCompare",
+      "patterns": [
+        "Compare Selection Sort with other sorts",
+        "Selection Sort vs other sorts",
+        "difference between Selection sort and other sorts",
+        "diff between Selection and other sorts",
+        "sorts vs Selection Sort",
+        "contrasting sorts and Selection Sort",
+        "is selection sort bad",
+        "is selection sort good?"
+      ],
+      "responses": [
+        "Selection sort is a simple algorithm that is slow and not fast in comparison to bubble sort. However, it works well with a small list to be sorted and in cases where space is limited. This feature is attributed mainly due to the minimal swaps O(n) requiring very less space. However selection sort will perform identically regardless of the order the array, while Merge or insertion sort's running time can vary considerably. Insertion sort runs much more efficiently if the array is already sorted or close to sorted."
+      ]
+    },
+    {
+      "tag": "merge_sort",
+      "patterns": [
+        "What is the time complexity of the merge Sort algorithm?",
+        "time complexity merge Sort",
+        "merge Sort complexity time",
+        "time complexity of merge Sort",
+        "Big O notation of merge Sort",
+        "Big O in merge sort"
+      ],
+      "responses": [
+        "Time complexity of the merge sort algorithm is O(nlogn). Merge Sort separates the array in half and takes linear time to merge the two halves. Hence its time complexity is nLogn in all three scenarios (worst, average, and best). It divides the input array in half, makes two separate calls for each half, and then joins the two sorted halves. To combine two halves, use the merge() function. The merge(arr, l, m, r) critical process merges the two sorted sub-arrays into one,\t presuming that arr[l..m] and arr[m+1..r] is sorted. \tMergeSort(arr[], l, r)\t If r > l 1.\t Find the middle point to divide the array into two halves:\t middle m = (l+r)/2\t 2. Call mergeSort for the first half:\tCall mergeSort(arr, l, m)\t3. Call mergeSort for the second half:\tCall mergeSort(arr, m+1, r)\t4. Merge the two halves sorted in steps 2 and 3:\tCall merge(arr, l, m, r) "
+      ]
+    },
+    {
+      "tag": "mergeSortHowDoesWork",
+      "patterns": [
+        "How does merge Sort work",
+        "merge Sort explination",
+        "explain merge Sort",
+        "define merge Sort",
+        "what is merge Sort",
+        "merge Sort"
+      ],
+      "responses": [
+        "The Merge Sort algorithm is a sorting algorithm that is based on the Divide and Conquer paradigm. In this algorithm, the array is initially divided into two equal halves and then they are combined in a sorted manner. Think of it as a recursive algorithm continuously splits the array in half until it cannot be further divided. This means that if the array becomes empty or has only one element left, the dividing will stop, i.e. it is the base case to stop the recursion. If the array has multiple elements, split the array into halves and recursively invoke the merge sort on each of the halves. Finally, when both halves are sorted, the merge operation is applied. Merge operation is the process of taking two smaller sorted arrays and combining them to eventually make a larger one. "
+      ]
+    },
+    {
+      "tag": "mergeSortCompare",
+      "patterns": [
+        "Compare merge Sort with other sorts",
+        "merge Sort vs other sorts",
+        "difference between merge sort and other sorts",
+        "diff between merge and other sorts",
+        "sorts vs merge Sort",
+        "contrasting sorts and merge Sort",
+        "is merge sort bad",
+        "is merge sort good?"
+      ],
+      "responses": [
+        "Merge sort is more efficient and works faster than quick sort in case of larger array size or datasets. Quick sort is more efficient and works faster than merge sort in case of smaller array size or datasets. Sorting method : The quick sort is internal sorting method where the data is sorted in main memory. \n Selection sort may be faster than mergesort on small input arrays because it's a simpler algorithm with lower constant factors than the ones hidden by mergesort. If you're sorting, say, arrays of 16 or so elements, then selection sort might be faster than mergesort."
+      ]
+    },
+    {
+      "tag": "LinearSearchTimeComplexity",
+      "patterns": [
+        "What is the time complexity of the Linear Search algorithm?",
+        "time complexity linear search",
+        "linear search complexity time",
+        "time complexity of linear search" 
+      ],
+      "responses": [
+        "Time complexity of the Linear Search algorithm is O(n). This is because it is going through the list until it finds the element it is searching for.",
+        "Linear Search has a time complexity of O(n). This is because it is going through the list until it finds the element it is searching for."
+      ]
+    },
+    {
+      "tag": "LinearSearchHowDoesWork",
+      "patterns": [
+        "How does linear search work",
+        "linear search explination",
+        "explain linear search",
+        "define linear search",
+        "what is linear search"
+      ],
+      "responses": [
+        "Linear Search (Also known as Sequential Search) is a basic search technique where you go through a list and check if an element matches the value you are searching for. It returns the index of the match if there is one."
+      ]
+    },
+    {
+      "tag": "LinearSearchCompare",
+      "patterns": [
+        "Compare linear search with binary search",
+        "linear search vs binary search",
+        "difference between linear and binary search",
+        "diff between linear and binary search",
+        "binary vs linear search",
+        "contrasting binary search and linear search",
+        "Compare binary search with linear search",
+        "binary search vs linear search",
+        "difference between binary and linear search",
+        "diff between binary and linear search",
+        "linear vs binary search"
+      ],
+      "responses": [
+        "Linear search does not require data to be sorted while binary search does. Time complexity of linear search is O(n) while binary search has a O(log n). Linear search is simplier to use. Binary search is faster. Linear search can be used in multidimensional arrays."
+      ]
+    },
+{
+  "tag": "BinarySearchTimeComplexity",
+      "patterns": [
+        "What is the time complexity of the Binary Search algorithm?",
+        "time complexity binary search",
+        "binary search complexity time",
+        "time complexity of binary search" 
+      ],
+      "responses": [
+        "Time complexity of the Binary Search algorithm is O(log n). This is because it takes sorted arrays and repeatedly divides the search interval in half.",
+        "Binary Search has a time complexity of O(log n). This is because it takes sorted arrays and repeatedly divides the search interval in half."
+      ]
+    },
+    {
+      "tag": "BinarySearchHowDoesWork",
+      "patterns": [
+        "How does binary search work",
+        "binary search explination",
+        "explain binary search",
+        "define binary search",
+        "what is binary search",
+        "binary search"
+      ],
+      "responses": [
+        "Binary Search is a basic search technique that takes a sorted array and gradually minimizes the search parameters by finding the mid element of the whole array. It then uses this search key to compare to the value needing to be searched. If the value is lesser then the search key it minimizes to the lower half of the array, if it is greater it minimizes to the upper half of the array. The search repeats this process until it finds the desired value."
+      ]
+    },
+    {
+      "tag": "BubbleSortTimeComplexity",
+      "patterns": [
+        "What is the time complexity of the Bubble Sort algorithm?",
+        "time complexity Bubble Sort",
+        "Bubble Sort complexity time",
+        "time complexity of Bubble Sort",
+        "Big O of Bubble sort",
+        "Bubble sort big O"
+      ],
+      "responses": [
+        "Time complexity of the Bubble Sort algorithm is Best: Ω(n) Average: Θ(n^2) Worst: O(n^2). It contains two loops which is why it is n * n",
+        "Bubble Sort has a time complexity of Best: Ω(n) Average: Θ(n^2) Worst: O(n^2). It contains two loops which is why it is n * n"
+      ]
+    },
+    {
+      "tag": "BubbleSortHowDoesWork",
+      "patterns": [
+        "How does Bubble Sort work",
+        "Bubble Sort explaination",
+        "explain Bubble Sort",
+        "define Bubble Sort",
+        "what is Bubble Sort"
+      ],
+      "responses": [
+        "Bubble Sort is a basic sorting algorithm. If adjacent elements are in the wrong order then the elements positions are swapped. This sorting algorithm is not recommended for large datasets as its average and worst cases are slow."
+      ]
+    },
+    {
+      "tag": "BubbleSortCompare",
+      "patterns": [
+        "Compare Bubble Sort with other sorts",
+        "Bubble Sort vs other sorts",
+        "difference between bubble sort and other sorts",
+        "diff between bubble and other sorts",
+        "sorts vs Bubble Sort",
+        "contrasting sorts and Bubble Sort"
+      ],
+      "responses": [
+        "Bubble Sort is a simple sorting techinque and is able to detect if a list is already sorted. It can be faster than other sorts if the list is already sorted."
+      ]
+    },
+
+    {
+      "tag": "RecursiveBubbleSortTimeComplexity",
+      "patterns": [
+        "What is the time complexity of the Recursive Bubble Sort algorithm?",
+        "time complexity Recursive Bubble Sort",
+        "Recursive Bubble Sort complexity time",
+        "time complexity of Recursive Bubble Sort" 
+      ],
+      "responses": [
+        "Time complexity of the Recursive Bubble Sort algorithm is O(n * n) == O(n^2). The same function is called recursively for each element in the list. Inside the function it is looping till the length of the list. This makes it n * n which is O(n^2).",
+        "Recursive Bubble Sort has a time complexity of O(n * n) == O(n^2).  The same function is called recursively for each element in the list. Inside the function it is looping till the length of the list. This makes it n * n which is O(n^2)."
+      ]
+    },
+    {
+      "tag": "RecursiveBubbleSortHowDoesWork",
+      "patterns": [
+        "How does Recursive Bubble Sort work",
+        "Recursive Bubble Sort explination",
+        "explain Recursive Bubble Sort",
+        "define Recursive Bubble Sort",
+        "what is Recursive Bubble Sort"
+      ],
+      "responses": [
+        "Recursive Bubble Sort is a basic sorting algorithm. If adjacent elements are in the wrong order then the elements positions are swapped. This algorithm will be using recursion which tends to be more difficult to trace compared to iteration."
+      ]
+    },
+    {
+      "tag": "RecursiveBubbleSortCompare",
+      "patterns": [
+        "Compare Recursive Bubble Sort with other sorts",
+        "Recursive Bubble Sort vs other sorts",
+        "difference between Recursive Bubble Sort and other sorts",
+        "diff between bubble and other sorts",
+        "sorts vs Recursive Bubble Sort",
+        "contrasting sorts and Recursive Bubble Sort"
+      ],
+      "responses": [
+        "Recursive Bubble Sort is a simple sorting techinque and is able to detect if a list is already sorted. It can be faster than other sorts if the list is already sorted.Recursive bubble sort can be faster than iterative bubble sort even though the math is the same."
+      ]
+    },
+  {
+      "tag": "InsertionSortTimeComplexity",
+      "patterns": [
+        "What is the time complexity of the Insertion Sort algorithm?",
+        "time complexity Insertion Sort",
+        "Insertion Sort complexity time",
+        "time complexity of Insertion Sort",
+        "Big O of Insertion sort",
+        "Insertion sort big O"
+      ],
+      "responses": [
+        "Time complexity of the Insertion Sort algorithm is Best: Ω(n) Average: θ(n^2) Worst: O(n^2). ",
+        "Insertion Sort has a time complexity of Best: Ω(n) Average: θ(n^2) Worst: O(n^2)."
+      ]
+    },
+    {
+      "tag": "InsertionSortHowDoesWork",
+      "patterns": [
+        "How does Insertion Sort work",
+        "Insertion Sort explaination",
+        "explain Insertion Sort",
+        "define Insertion Sort",
+        "what is Insertion Sort"
+      ],
+      "responses": [
+        "Insertion Sort is a basic sorting algorithm. It is most efficient when the data set is small. It goes through each data value and compares it to each other. Adjacent elements that are in the wrong order get swapped, the sort goes through this process until the entire data set is sorted. This sort is not recommended for larger data sets as it would take a tremendous amount of time to sort."
+      ]
+    },
+    {
+      "tag": "InsertionSortCompare",
+      "patterns": [
+        "Compare Insertion Sort with other sorts",
+        "Insertion Sort vs other sorts",
+        "difference between Insertion sort and other sorts",
+        "diff between Insertion and other sorts",
+        "sorts vs Insertion Sort",
+        "contrasting sorts and Insertion Sort"
+      ],
+      "responses": [
+        "Insertion Sort is a simple sorting techinque and is able to detect if a list is already sorted. It can be faster than other sorts if the list is already sorted."
+      ]
+    },
+    {
+      "tag": "RecursiveInsertionSortTimeComplexity",
+      "patterns": [
+        "What is the time complexity of the Recursive Insertion Sort algorithm?",
+        "time complexity Recursive Insertion Sort",
+        "Recursive Insertion Sort complexity time",
+        "time complexity of Recursive Insertion Sort",
+        "Big O of Recursive Insertion sort",
+        "Recursive Insertion sort big O"
+      ],
+      "responses": [
+        "Time complexity of the Recursive Insertion Sort algorithm is O(n*n) == O(n^2). This sort calls all the elements recursively in the list. The function loops till the length of the list."
+      ]
+    },
+    {
+      "tag": "RecursiveInsertionSortHowDoesWork",
+      "patterns": [
+        "How does Recursive Insertion Sort work",
+        "Recursive Insertion Sort explaination",
+        "explain Recursive Insertion Sort",
+        "define Recursive Insertion Sort",
+        "what is Recursive Insertion Sort"
+      ],
+      "responses": [
+        "Recursive Insertion Sort is a basic sorting algorithm. It is most efficient when the data set is small. It goes through each data value and compares it to each other. Adjacent elements that are in the wrong order get swapped, the sort goes through this process until the entire data set is sorted. This sort is not recommended for larger data sets as it would take a tremendous amount of time to sort. This version uses recursion which is more difficult to trace."
+      ]
+    },
+    {
+      "tag": "RecursiveInsertionSortCompare",
+      "patterns": [
+        "Compare Recursive Insertion Sort with other sorts",
+        "Recursive Insertion Sort vs other sorts",
+        "difference between Recursive Insertion sort and other sorts",
+        "diff between Recursive Insertion and other sorts",
+        "sorts vs Recursive Insertion Sort",
+        "contrasting sorts and Recursive Insertion Sort"
+      ],
+      "responses": [
+        "Recursive Insertion Sort is a simple sorting techinque and is able to detect if a list is already sorted. It can be faster than other sorts if the list is already sorted. This sort is can be faster then normal insertion sort."
+      ]
+    },
+    {
+      "tag": "QuickSearchTimeComplexity",
+      "patterns": [
+        "What is the time complexity of the Quick Search algorithm?",
+        "time complexity Quick search",
+        "Quick search complexity time",
+        "time complexity of Quick search" 
+      ],
+      "responses": [
+        "Time complexity of the Quick Search algorithm is Best: O(n*log n), Average:O(n*log n), and Worst: O(n^2)"
+      ]
+    },
+    {
+      "tag": "QuickSearchHowDoesWork",
+      "patterns": [
+        "How does Quick search work",
+        "Quick search explination",
+        "explain Quick search",
+        "define Quick search",
+        "what is Quick search",
+        "Quick search"
+      ],
+      "responses": [
+        "Quick Search is a divide and conquer algorithm, that picks and element as a pivot and partitions the array around that pivot. The pivots can be first, last, random, or median element. The algorithm then sorts around the pivot, if it is greater then the pivot it is on the right and if its less then its on the left."
+      ]
+    }
+{
+      "tag": "QuickSortCompare",
+      "patterns": [
+        "Compare Quick Sort with other sorts",
+        "Quick Sort vs other sorts",
+        "difference between Quick sort and other sorts",
+        "diff between Quick and other sorts",
+        "sorts vs Quick Sort",
+        "contrasting sorts and Quick Sort",
+        "is Quick sort bad",
+        "is Quick sort good?"
+      ],
+      "responses": [
+        "Quick sort is a complex algorithm that is mainly used in operational reserach and event-driven simulation. It is most used for numerical computations. Compared to other sorts this one is used for efficiently developing algorithms."
+      ]
+    },
+{
+      "tag": "IterativeQuickSearchTimeComplexity",
+      "patterns": [
+        "What is the time complexity of the Iterative Quick Search algorithm?",
+        "time complexity Iterative Quick search",
+        "Iterative Quick search complexity time",
+        "time complexity of Iterative Quick search" 
+      ],
+      "responses": [
+        "Time complexity of the Iterative Quick Search algorithm is Best: O(n*log (n)), Average:O(n*log n), and Worst: O(n^2)"
+      ]
+    },
+    {
+      "tag": "IterativeQuickSearchHowDoesWork",
+      "patterns": [
+        "How does Iterative Quick search work",
+        "Iterative Quick search explination",
+        "explain Iterative Quick search",
+        "define Iterative Quick search",
+        "what is Iterative Quick search",
+        "Iterative Quick search"
+      ],
+      "responses": [
+        "Iterative Quick Search is a divide and conquer algorithm, that picks and element as a pivot and partitions the array around that pivot. Since this version is iterative the pivot is only the last element. The algorithm then sorts around the pivot, if it is greater then the pivot it is on the right and if its less then its on the left."
+      ]
+    }
+{
+      "tag": "IterativeQuickSortCompare",
+      "patterns": [
+        "Compare Iterative Quick Sort with other sorts",
+        "Iterative Quick Sort vs other sorts",
+        "difference between Iterative Quick sort and other sorts",
+        "diff between Iterative Quick and other sorts",
+        "sorts vs Iterative Quick Sort",
+        "contrasting sorts and Iterative Quick Sort",
+        "is Iterative Quick sort bad",
+        "is Iterative Quick sort good?"
+      ],
+      "responses": [
+        "Iterative Quick sort is a complex algorithm that is mainly used in operational reserach and event-driven simulation. It is most used for numerical computations. Compared to other sorts this one is used for efficiently developing algorithms. Since this form is iterative it only uses last element as pivot."
       ]
     }
   ]
