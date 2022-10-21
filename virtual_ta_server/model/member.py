@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 cors = CORS(app, resources={r"/*": {"origins": "*"}})
 
-@app.get("/sendAnswer/<question>")
+@app.route("/sendAnswer/<question>", methods =['GET'])
 def member(question):
     print(question)
     # s = '{"hello": "laugh"}'
