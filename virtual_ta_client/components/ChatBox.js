@@ -4,7 +4,6 @@ import TextField from "@mui/material/TextField";
 import Typography from "@mui/material";
 import axios from "axios";
 import ScrollableChat from "./ScrollableChat";
-import "katex/dist/katex.min.css";
 
 var Latex = require("react-latex-next");
 
