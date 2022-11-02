@@ -18,6 +18,41 @@
       ]
     },
     {
+      "tag": "HC1",
+      "patterns": [
+        "I have a question",
+        "Can I ask something?",
+        "I need an answer",
+        "I have a doubt",
+        "Can you solve something for me?",
+        "Riddle me this",
+        "help",
+        "I need some help",
+        "help me",
+        "I am confused"
+      ],
+      "responses": [
+        "Ask away!",
+        "I will try my best to solve your doubts :)",
+        "'A prudent question is one-half of wisdom.' ~ Francis Bacon. Ask away!"
+      ]
+    },
+    {
+      "tag": "exiting",
+      "patterns": [
+        "Thank You!",
+        "thanks",
+        "That answers my questions, thanks!",
+        "I'm good now",
+        "Bye!"
+      ],
+      "responses": [
+        "You are very welcome! Come back any time.",
+        "'The one real goal of education is to leave a person asking questions.' ~ Max Beerbohm. Come back whenever you have more questions!",
+        "No problems, I'm always here to help :)"
+      ]
+    },
+    {
       "tag": "SelectionSortTimeComplexity",
       "patterns": [
         "What is the time complexity of the Selection Sort algorithm?",
@@ -35,7 +70,7 @@
       "tag": "SelectionSortHowDoesWork",
       "patterns": [
         "How does Selection Sort work",
-        "Selection Sort explination",
+        "Selection Sort explaination",
         "explain Selection Sort",
         "define Selection Sort",
         "what is Selection Sort",
