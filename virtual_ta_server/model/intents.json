@@ -54,6 +54,42 @@
       ]
     },
     {
+      "tag": "understood",
+      "patterns": [
+        "Yes, i understood",
+        "ye i got it",
+        "i think i got it",
+        "i think i understood",
+        "Yes, thank you very much",
+        "your a lifesaver thank you",
+        "how can i ever repay you"
+      ],
+      "responses": [
+        "You are very welcome! Is there anything else I can help you with",
+        "Thats good, anything else i can help you with?",
+        "Im glad I could help, anything else?"
+      ]
+    },
+    {
+      "tag": "NOTunderstood",
+      "patterns": [
+        "No, I didnt understand",
+        "no i dont got it",
+        "No",
+        "It still doesnt make sense",
+        "Uhhhh, no",
+        "No comprehendo",
+        "what this dont make sense",
+        "wait what?",
+        "Na homie"
+      ],
+      "responses": [
+        "Oh No! What part was unclear?",
+        "What can I help you with?",
+        "Im sorry I wasnt clear! What part did you not understand?"
+      ]
+    },
+    {
       "tag": "SelectionSortTimeComplexity",
       "patterns": [
         "What is the time complexity of the Selection Sort algorithm?",
