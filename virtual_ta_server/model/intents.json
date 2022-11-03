@@ -108,7 +108,7 @@
         "Big O in merge sort"
       ],
       "responses": [
-        "Time complexity of the merge sort algorithm is O(nlogn). Merge Sort separates the array in half and takes linear time to merge the two halves. Hence its time complexity is nLogn in all three scenarios (worst, average, and best). It divides the input array in half, makes two separate calls for each half, and then joins the two sorted halves. To combine two halves, use the merge() function. The merge(arr, l, m, r) critical process merges the two sorted sub-arrays into one,\t presuming that arr[l..m] and arr[m+1..r] is sorted. \tMergeSort(arr[], l, r)\t If r > l 1.\t Find the middle point to divide the array into two halves:\t middle m = (l+r)/2\t 2. Call mergeSort for the first half:\tCall mergeSort(arr, l, m)\t3. Call mergeSort for the second half:\tCall mergeSort(arr, m+1, r)\t4. Merge the two halves sorted in steps 2 and 3:\tCall merge(arr, l, m, r) "
+        "The time complexity of the merge sort algorithm is O(nlogn). If you want to learn more go to https://www.digitalocean.com/community/tutorials/merge-sort-algorithm-java-c-python."
       ]
     },
     {
@@ -122,7 +122,7 @@
         "merge Sort"
       ],
       "responses": [
-        "The Merge Sort algorithm is a sorting algorithm that is based on the Divide and Conquer paradigm. In this algorithm, the array is initially divided into two equal halves and then they are combined in a sorted manner. Think of it as a recursive algorithm continuously splits the array in half until it cannot be further divided. This means that if the array becomes empty or has only one element left, the dividing will stop, i.e. it is the base case to stop the recursion. If the array has multiple elements, split the array into halves and recursively invoke the merge sort on each of the halves. Finally, when both halves are sorted, the merge operation is applied. Merge operation is the process of taking two smaller sorted arrays and combining them to eventually make a larger one. "
+        "The Merge Sort algorithm is a sorting algorithm that is based on the Divide and Conquer paradigm. For more information go to https://www.geeksforgeeks.org/merge-sort/."
       ]
     },
     {
@@ -138,7 +138,7 @@
         "is merge sort good?"
       ],
       "responses": [
-        "Merge sort is more efficient and works faster than quick sort in case of larger array size or datasets. Quick sort is more efficient and works faster than merge sort in case of smaller array size or datasets. Sorting method : The quick sort is internal sorting method where the data is sorted in main memory. \n Selection sort may be faster than mergesort on small input arrays because it's a simpler algorithm with lower constant factors than the ones hidden by mergesort. If you're sorting, say, arrays of 16 or so elements, then selection sort might be faster than mergesort."
+        "Merge sort is more efficient and works faster than quick sort in case of larger array size or datasets. Quick sort is more efficient and works faster than merge sort in case of smaller array size or datasets."
       ]
     },
     {
@@ -150,8 +150,7 @@
         "time complexity of linear search" 
       ],
       "responses": [
-        "Time complexity of the Linear Search algorithm is O(n). This is because it is going through the list until it finds the element it is searching for.",
-        "Linear Search has a time complexity of O(n). This is because it is going through the list until it finds the element it is searching for."
+        "Time complexity of the Linear Search algorithm is O(n). For more information go to https://stackoverflow.com/questions/69595360/why-is-the-space-complexity-for-linear-search-o1",
       ]
     },
     {
@@ -164,7 +163,7 @@
         "what is linear search"
       ],
       "responses": [
-        "Linear Search (Also known as Sequential Search) is a basic search technique where you go through a list and check if an element matches the value you are searching for. It returns the index of the match if there is one."
+        "Linear Search is a basic search technique where you go through a list and check if an element matches the value you are searching for. It returns the index of the match if there is one."
       ]
     },
     {
@@ -183,7 +182,7 @@
         "linear vs binary search"
       ],
       "responses": [
-        "Linear search does not require data to be sorted while binary search does. Time complexity of linear search is O(n) while binary search has a O(log n). Linear search is simplier to use. Binary search is faster. Linear search can be used in multidimensional arrays."
+        "Linear search does not require data to be sorted while binary search does."
       ]
     },
 {
@@ -195,8 +194,7 @@
         "time complexity of binary search" 
       ],
       "responses": [
-        "Time complexity of the Binary Search algorithm is O(log n). This is because it takes sorted arrays and repeatedly divides the search interval in half.",
-        "Binary Search has a time complexity of O(log n). This is because it takes sorted arrays and repeatedly divides the search interval in half."
+        "Time complexity of the Binary Search algorithm is O(log n). For more information go to https://www.geeksforgeeks.org/complexity-analysis-of-binary-search/"
       ]
     },
     {
@@ -210,7 +208,7 @@
         "binary search"
       ],
       "responses": [
-        "Binary Search is a basic search technique that takes a sorted array and gradually minimizes the search parameters by finding the mid element of the whole array. It then uses this search key to compare to the value needing to be searched. If the value is lesser then the search key it minimizes to the lower half of the array, if it is greater it minimizes to the upper half of the array. The search repeats this process until it finds the desired value."
+        "Binary Search is a basic search technique that takes a sorted array and gradually minimizes the search parameters by finding the mid element of the whole array. "
       ]
     },
     {
@@ -224,8 +222,7 @@
         "Bubble sort big O"
       ],
       "responses": [
-        "Time complexity of the Bubble Sort algorithm is Best: Ω(n) Average: Θ(n^2) Worst: O(n^2). It contains two loops which is why it is n * n",
-        "Bubble Sort has a time complexity of Best: Ω(n) Average: Θ(n^2) Worst: O(n^2). It contains two loops which is why it is n * n"
+        "Time complexity of the Bubble Sort algorithm is Best: Ω(n) Average: Θ(n^2) Worst: O(n^2). For more information go to https://www.geeksforgeeks.org/bubble-sort/"
       ]
     },
     {
@@ -238,7 +235,7 @@
         "what is Bubble Sort"
       ],
       "responses": [
-        "Bubble Sort is a basic sorting algorithm. If adjacent elements are in the wrong order then the elements positions are swapped. This sorting algorithm is not recommended for large datasets as its average and worst cases are slow."
+        "Bubble Sort is a basic sorting algorithm. If adjacent elements are in the wrong order then the elements positions are swapped. For more information go to https://www.geeksforgeeks.org/bubble-sort/"
       ]
     },
     {
