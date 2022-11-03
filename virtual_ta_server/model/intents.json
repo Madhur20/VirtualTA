@@ -44,7 +44,8 @@
         "thanks",
         "That answers my questions, thanks!",
         "I'm good now",
-        "Bye!"
+        "Bye!",
+        "Thanks for the help."
       ],
       "responses": [
         "You are very welcome! Come back any time.",
@@ -461,6 +462,35 @@
       "responses": [
         "Iterative Quick sort is a complex algorithm that is mainly used in operational reserach and event-driven simulation. It is most used for numerical computations. Compared to other sorts this one is used for efficiently developing algorithms. Since this form is iterative it only uses last element as pivot."
       ]
+    },
+    {
+      "tag": "Expaining Time Complexity",
+      "patterns": [
+        "Explain Time Complexity.",
+        "What is time complexity.",
+        "time complexity?",
+        "I do not understand time complexity.",
+        "I have difficulty with time complexity.",
+        "I dont understand time complexity",
+        "I dont understand how time complexity works",
+        "I dont understand how big-O notation works",
+        "what does big O mean",
+        "why is complexity necessary",
+        "How does complexity matter",
+        "explain big o to me",
+        "explain complexity to me",
+        "What is big O"
+      ],
+      "responses": [
+        "Think of it as a way to estimate how long a program will run. It can be used to compare how efficent a piece of code runs compared to another piece. Remember, this is an estimate so O(15n) and O(3n) would both simplify to O(n)."
+      ]
     }
+
+
+
+
+
+
+
   ]
 }
