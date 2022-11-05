@@ -1,6 +1,6 @@
 Flask==1.1.2
 Flask_Cors==3.0.10
 nltk==3.6.5
-numpy==1.20.3
-torch
+numpy==1.21.5
+torch==1.12.1
 gunicorn
