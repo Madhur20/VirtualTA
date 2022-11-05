@@ -1,18 +1,15 @@
-import Image from 'next/image';
+import Image from "next/image";
 
 export default function HomePage() {
-    return (
-      <div id="img">
-        <Image
+  return (
+    <div id="img">
+      <Image
         src="/utdallas-img.jpeg"
-        layout='fill'
+        alt="utdallas-background-image"
+        layout="fill"
         width="500"
         height="500"
-        >
-          
-        </Image>
-        
-      </div>
-    )
-  }
-
+      ></Image>
+    </div>
+  );
+}
