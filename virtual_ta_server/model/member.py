@@ -7,17 +7,16 @@ app = Flask(__name__)
 
 cors = CORS(app, resources={r"/*": {"origins": "*"}})
 
-@app.route("/sendAnswer/<question>", methods =['GET'])
-def member(question):
-    print(question)
-    # s = '{"hello": "laugh"}'
-    response = message(question)
-    print(response)
-    return {"answer": response}
 
-
-
+@app.route("/")
+def member():
+    return "Hello World!"
+    # print(question)
+    # # s = '{"hello": "laugh"}'
+    # response = message(question)
+    # print(response)
+    # return {"answer": response}
 
 
 if __name__ == "__main__":
-    app.run(debug=True, host = "localhost", port = 8080)
+    app.run(debug=True, host="localhost", port=8080)
