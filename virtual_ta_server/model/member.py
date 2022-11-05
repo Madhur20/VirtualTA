@@ -8,14 +8,14 @@ app = Flask(__name__)
 cors = CORS(app, resources={r"/*": {"origins": "*"}})
 
 
-@app.route("/")
-def member():
-    return "Hello World!"
-    # print(question)
-    # # s = '{"hello": "laugh"}'
-    # response = message(question)
-    # print(response)
-    # return {"answer": response}
+@app.route("/<question>")
+def member(question):
+    # return "Hello World!"
+    print(question)
+    # s = '{"hello": "laugh"}'
+    response = message(question)
+    print(response)
+    return {"answer": response}
 
 
 if __name__ == "__main__":
