@@ -11,10 +11,10 @@ cors = CORS(app, resources={r"/*": {"origins": "*"}})
 @app.route("/<question>")
 def member(question):
     # return "Hello World!"
-    print(question)
+    # print(question)
     # s = '{"hello": "laugh"}'
     response = message(question)
-    print(response)
+    # print(response)
     return {"answer": response}
 
 
