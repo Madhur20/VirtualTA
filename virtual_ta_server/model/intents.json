@@ -495,6 +495,165 @@
         "Iterative Quick sort is a complex algorithm that is mainly used in operational reserach and event-driven simulation. It is most used for numerical computations. Compared to other sorts this one is used for efficiently developing algorithms. Since this form is iterative it only uses last element as pivot."
       ]
     },
+
+    {
+      "tag": "Queues",
+      "patterns": [
+        "what are queues",
+        "queues",
+        "explain queues",
+        "Define Queues"
+        
+      ],
+      "responses": [
+        "Queues is like you are waiting in line. The order is in first come first serve. It is when operations happen in FIFO order. "
+      ]
+    },
+
+    {
+      "tag": "FIFO",
+      "patterns": [
+        "what is FIFO",
+        "FIFO",
+        "explain FIFO",
+        "FIFO meaning",
+        "Define FIFO",
+        "what does FIFO stand for"
+        
+      ],
+      "responses": [
+        "FIFO stands for First In First Out. "
+      ]
+    },
+
+    {
+      "tag": "Stack",
+      "patterns": [
+        "what is stack",
+        "stack",
+        "explain stacks",
+        "stacks meaning",
+        "Define stacks"
+        
+      ],
+      "responses": [
+        "Stack is a linear data structure that performs operations in a FILO/LIFO order "
+      ]
+    },
+
+    {
+      "tag": "LIFO",
+      "patterns": [
+        "what is LIFO",
+        "LIFO",
+        "explain LIFO",
+        "LIFO meaning",
+        "Define LIFO",
+        "What does LIFO stand for"
+        
+      ],
+      "responses": [
+        "It stands for Last In First Out. Think of it like stacking plates and you can only get a plate from the top."
+      ]
+    },
+
+    {
+      "tag": "FILO",
+      "patterns": [
+        "what is FILO",
+        "FILO",
+        "explain FILO",
+        "FILO meaning",
+        "Define FILO",
+        "What does FILO stand for"
+        
+      ],
+      "responses": [
+        "It stands for First In Last Out. Think of it like stacking plates and you can only get a plate from the top."
+      ]
+    },
+
+
+    {
+      "tag": "LinkedLists",
+      "patterns": [
+        "what is Linked List",
+        "Linked List",
+        "explain Linked List",
+        "Linked List meaning",
+        "Define Linked List",
+        "what are Linked Lists"
+        
+      ],
+      "responses": [
+        "They are similar to arrays but not stored in a contiguous loction. They use pointers to connect nodes."
+      ]
+    },
+
+    {
+      "tag": "WhyLinkedLists",
+      "patterns": [
+        "why use linked lists",
+        "why use linked lists over arrays",
+        "which is better linked lists or arrays",
+        "should i use a linked list or an array",
+        "when should i use a linked list"
+        
+      ],
+      "responses": [
+        "You should use linked lists when you need to add and remove elements a lot or quickly as this this can be done relatively fast with linked lists."
+      ]
+    },
+
+    {
+      "tag": "IterativeMergeSort",
+      "patterns": [
+        "what is Iterative Merge Sort",
+        "Iterative Merge Sort",
+        "explain Iterative Merge Sort",
+        "Iterative Merge Sort meaning",
+        "Define Iterative Merge Sort",
+        "what are Iterative Merge Sort"
+        
+      ],
+      "responses": [
+        "Iterative Merge Sort is slightly faster than recursive merge sort. It is also know as bottom up merge sort."
+      ]
+    },
+
+    {
+      "tag": "Heap Sort",
+      "patterns": [
+        "what is Heap Sort",
+        "Heap Sort",
+        "explain Heap Sort",
+        "Heap Sort meaning",
+        "Define Heap Sort",
+        "what are Heap Sort"
+        
+      ],
+      "responses": [
+        "Heap sort is generally used longest/highest or shortest/smallest value is needed fast."
+      ]
+    },
+
+    {
+      "tag": "Counting Sort",
+      "patterns": [
+        "what is Counting Sort",
+        "Counting Sort",
+        "explain Counting Sort",
+        "Counting Sort meaning",
+        "Define Counting Sort",
+        "what are Counting Sort"
+        
+      ],
+      "responses": [
+        "When the difference between keys is not that big, it is effective. If they are really different, it can negatively affect space complexity."
+      ]
+    },
+
+
     {
       "tag": "Expaining Time Complexity",
       "patterns": [
