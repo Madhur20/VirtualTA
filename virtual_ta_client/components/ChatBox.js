@@ -6,6 +6,7 @@ import axios from "axios";
 import ScrollableChat from "./ScrollableChat";
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
+import "three-dots";
 // import { View, Text } from "react-native";
 // import "katex/dist/katex.min.css";
 
@@ -20,12 +21,11 @@ export default function ChatBox() {
   ];
 
   const [question, setQuestion] = React.useState("");
-  const [isSuper, setIsSuper] = React.useState(false);
   const [answer, setAnswer] = React.useState("");
   const [messages, setMessages] = React.useState([]);
-  const [latex, setLatex] = React.useState([]);
   const [isVisible, setIsVisible] = React.useState(false);
-  const [store, setStore] = React.useState("")
+  const [isLoading, setIsLoading] = React.useState(false);
+  const [store, setStore] = React.useState("");
   const handleChange = (e) => {
     // console.log(e);
     const val = e.target.value;
@@ -34,7 +34,7 @@ export default function ChatBox() {
 
   function littleOmega() {
     const lilO = "ω";
-    setQuestion(question + " " +lilO);
+    setQuestion(question + " " + lilO);
   }
   function square() {
     const sigma = "²";
@@ -42,7 +42,7 @@ export default function ChatBox() {
     setQuestion(question + sigma);
   }
   function ln() {
-    const ln = "ln"
+    const ln = "ln";
     setQuestion(question + " " + ln);
   }
   function theta() {
@@ -50,7 +50,7 @@ export default function ChatBox() {
     setQuestion(question + " " + theta);
   }
   function log() {
-    const log = "log"
+    const log = "log";
     setQuestion(question + " " + log);
   }
   function squareRoot() {
@@ -63,71 +63,64 @@ export default function ChatBox() {
   }
   const sig = () => {
     const sig = "Σ";
-    setQuestion(question + " "+sig)
-  }
+    setQuestion(question + " " + sig);
+  };
   function vis() {
-    setIsVisible(!isVisible)
+    setIsVisible(!isVisible);
   }
   const handlePowerChange = (e) => {
     // console.log(e);
     const val = e.target.value;
 
     setStore(val);
-  }
-  const setPower = async(e) => {
-    
+  };
+  const setPower = async (e) => {
     if (e.keyCode == 13) {
-      let superK = ""
-       for(let i = 0 ; i < store.length; i++) {
-      if(store.charAt(i) == "0") {
-         superK += '⁰'
+      let superK = "";
+      for (let i = 0; i < store.length; i++) {
+        if (store.charAt(i) == "0") {
+          superK += "⁰";
+        } else if (store.charAt(i) == "1") {
+          superK += "¹";
+        } else if (store.charAt(i) == "2") {
+          superK += "²";
+        } else if (store.charAt(i) == "3") {
+          superK += "³";
+        } else if (store.charAt(i) == "4") {
+          superK += "⁴";
+        } else if (store.charAt(i) == "5") {
+          superK += "⁵";
+        } else if (store.charAt(i) == "6") {
+          superK += "⁶";
+        } else if (store.charAt(i) == "7") {
+          superK += "⁷";
+        } else if (store.charAt(i) == "8") {
+          superK += "⁸";
+        } else if (store.charAt(i) == "9") {
+          superK += "⁹";
+        }
       }
-      else if(store.charAt(i) == "1") {
-        superK += '¹'
-     }
-     else if(store.charAt(i) == "2") {
-      superK += '²'
+      setQuestion(question + superK);
+      setIsVisible(!isVisible);
+      setStore("");
     }
-    else if(store.charAt(i) == "3") {
-    superK += '³'
-    }
-    else if(store.charAt(i) == "4") {
-      superK += '⁴'
-    }
-    else if(store.charAt(i) == "5") {
-      superK += '⁵'
-    }
-    else if(store.charAt(i) == "6") {
-      superK += '⁶'
-    }
-    else if(store.charAt(i) == "7") {
-      superK += '⁷'
-    }
-    else if(store.charAt(i) == "8") {
-      superK += '⁸'
-    }
-    else if(store.charAt(i) == "9") {
-      superK += '⁹'
-    }
-     
-    }
-      setQuestion(question + superK) 
-      setIsVisible(!isVisible)
-      setStore("")
-    }
-   
-  }
+  };
+
+  const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
   const sendChange = async (e) => {
     if (e.keyCode == 13) {
+      setIsLoading(true);
       // console.log(question);
       const ques = {
         id: "fromUser",
         msg: question,
       };
       setMessages((messages) => messages.concat(ques));
-      // setMessages([...messages, ques]);
-      //await axios.post("http://localhost:5000/userQuery", question);
+
+      //await 1000 ms
+      await sleep(1000);
+
       const ans = await fetch(
         "https://virtual-ta-server.herokuapp.com/" + question
       )
@@ -139,6 +132,7 @@ export default function ChatBox() {
         .catch((e) => {
           console.log(e);
         });
+      setIsLoading(false);
       setAnswer(ans);
       const data = {
         id: "fromBot",
@@ -209,10 +203,10 @@ export default function ChatBox() {
           <Box
             sx={{
               width: "100%",
-              height: "90%",
-              maxHeight: "90%",
+              height: "80%",
               backgroundColor: "white",
               display: "flex",
+              flexDirection: "column",
               justifyContent: "center",
               alignItems: "center",
               color: "black",
@@ -222,72 +216,181 @@ export default function ChatBox() {
               border: "1px solid pink",
             }}
           >
-            <ScrollableChat message={messages} />
+            <Box sx={{ width: "100%", height: "95%" }}>
+              <ScrollableChat message={messages} />
+            </Box>
+
+            {/* //three dots */}
+            {isLoading && (
+              <Box sx={{ width: "100%" }}>
+                <div style={{ padding: 10, paddingTop: 0, paddingLeft: "2%" }}>
+                  <div class="dot-typing"></div>
+                </div>
+              </Box>
+            )}
           </Box>
 
           <Box
             sx={{
               width: "100%",
-              border: "1px solid lightblue",
+              height: "20%",
+              // border: "1px solid",
+              padding: "0",
               borderRadius: "10px",
             }}
-            
           >
             {/* //<EquationEditor> */}
-            <TextField
-              id="text-bar"
-              label="Ask Something..."
-              variant="outlined"
-              fullWidth
-              value={question}
-              onChange={handleChange}
-              onKeyDown={sendChange}
-            />
+            <Box sx={{ height: "40%" }}>
+              <TextField
+                id="text-bar"
+                label="Ask Something..."
+                variant="outlined"
+                fullWidth
+                // size="small"
+                value={question}
+                onChange={handleChange}
+                onKeyDown={sendChange}
+              />
+            </Box>
 
             <Box
               sx={{
                 width: "100%",
-                height: "100px",
-                border: "1px solid lightblue",
+                height: "60%",
+                padding: "1%",
+                // border: "1px solid lightblue",
                 borderRadius: "10px",
                 display: "flex",
                 justifyContent: "center",
                 flexWrap: "wrap",
-                padding: 1,
               }}
             >
-              <Button style={{width: 40, height: 40, backgroundColor: "#35f705", margin:10}}  variant="outlined"  size="small" onClick={sig}
-                startIcon={<Avatar sx={{maxWidth: 10, maxHeight: 10}} src={"/1200px-Greek_uc_sigma.svg.png"}/> }>
-                  
-              </Button>
-              <Button style={{width: 40, height: 40, backgroundColor: "#35f705", margin:10}} variant="outlined" onClick={theta}
-                startIcon={<Avatar src={"/theta.png"}/> }>
-                  
-              </Button>
-              <Button style={{width: 40, height: 40, backgroundColor: "#35f705", margin:10}} variant="outlined" onClick={log}
-                startIcon={<Avatar style={{ justifyContent: "center", display: "flex" }} src={"/log.png"}/> }>
-                  
-              </Button>
-              <Button style={{width: 40, height: 40, backgroundColor: "#35f705", margin:10}} variant="outlined" onClick={ln}
-                 startIcon={<Avatar src={"/ln.png"}/> }>
-                  
-              </Button>
-              <Button style={{width: 40, height: 40, backgroundColor: "#35f705", margin:10}} variant="outlined" onClick={squareRoot}
-                startIcon={<Avatar src={"/square-root.png"}/> }>
-                  
-              </Button>
-              <Button style={{width: 40, height: 40, backgroundColor: "#35f705", margin:10}} variant="outlined" onClick={littleOmega}
-                startIcon={<Avatar src={"/omega.png"}/> }>            
-              </Button>
-              <Box sx ={{display: "flex", flexDirection: "column"}}>  
-              {!isVisible && <Button style={{width: 40, height: 40, backgroundColor: "#35f705", margin:10}} variant="outlined" onClick={vis}
-                startIcon={<Avatar style={{ justifyContent: "center", display: "flex", alignItems: "center", lineHeight: 0, letterSpacing: 0, flexDirection: "column" }} src={"/x^y.png"}/> }>            
-              </Button>}
-                {isVisible && <TextField sx={{zIndex:"10"}}value = {store} onChange= {handlePowerChange} onKeyDown = {setPower} id="power" label="y=" style ={{ width: 65, marginLeft: 10, }}></TextField>}
+              <Button
+                style={{
+                  width: 40,
+                  height: 40,
+                  backgroundColor: "#F7EAEF",
+                  margin: 10,
+                }}
+                variant="outlined"
+                size="small"
+                onClick={sig}
+                startIcon={
+                  <Avatar
+                    sx={{ maxWidth: 10, maxHeight: 10 }}
+                    src={"/1200px-Greek_uc_sigma.svg.png"}
+                  />
+                }
+              ></Button>
+              <Button
+                style={{
+                  width: 40,
+                  height: 40,
+                  backgroundColor: "#F7EAEF",
+                  margin: 10,
+                }}
+                variant="outlined"
+                onClick={theta}
+                startIcon={<Avatar src={"/theta.png"} />}
+              ></Button>
+              <Button
+                style={{
+                  width: 40,
+                  height: 40,
+                  backgroundColor: "#F7EAEF",
+                  margin: 10,
+                }}
+                variant="outlined"
+                onClick={log}
+                startIcon={
+                  <Avatar
+                    style={{ justifyContent: "center", display: "flex" }}
+                    src={"/log.png"}
+                  />
+                }
+              ></Button>
+              <Button
+                style={{
+                  width: 40,
+                  height: 40,
+                  backgroundColor: "#F7EAEF",
+                  margin: 10,
+                }}
+                variant="outlined"
+                onClick={ln}
+                startIcon={<Avatar src={"/ln.png"} />}
+              ></Button>
+              <Button
+                style={{
+                  width: 40,
+                  height: 40,
+                  backgroundColor: "#F7EAEF",
+                  margin: 10,
+                }}
+                variant="outlined"
+                onClick={squareRoot}
+                startIcon={<Avatar src={"/square-root.png"} />}
+              ></Button>
+              <Button
+                style={{
+                  width: 40,
+                  height: 40,
+                  backgroundColor: "#F7EAEF",
+                  margin: 10,
+                }}
+                variant="outlined"
+                onClick={littleOmega}
+                startIcon={<Avatar src={"/omega.png"} />}
+              ></Button>
+              <Box sx={{ display: "flex", flexDirection: "column" }}>
+                {!isVisible && (
+                  <Button
+                    style={{
+                      width: 40,
+                      height: 40,
+                      backgroundColor: "#F7EAEF",
+                      margin: 10,
+                    }}
+                    variant="outlined"
+                    onClick={vis}
+                    startIcon={
+                      <Avatar
+                        style={{
+                          justifyContent: "center",
+                          display: "flex",
+                          alignItems: "center",
+                          lineHeight: 0,
+                          letterSpacing: 0,
+                          flexDirection: "column",
+                        }}
+                        src={"/x^y.png"}
+                      />
+                    }
+                  ></Button>
+                )}
+                {isVisible && (
+                  <TextField
+                    sx={{ zIndex: "10" }}
+                    value={store}
+                    onChange={handlePowerChange}
+                    onKeyDown={setPower}
+                    id="power"
+                    label="y="
+                    style={{ width: 65, marginLeft: 10 }}
+                  ></TextField>
+                )}
               </Box>
-              <Button style={{width: 40, height: 40, backgroundColor: "#35f705", margin:10}} variant="outlined" onClick={omega}
-                startIcon={<Avatar src={"bigOmega.png"}/> }>            
-              </Button>
+              <Button
+                style={{
+                  width: 40,
+                  height: 40,
+                  backgroundColor: "#F7EAEF",
+                  margin: 10,
+                }}
+                variant="outlined"
+                onClick={omega}
+                startIcon={<Avatar src={"bigOmega.png"} />}
+              ></Button>
               {/* <Button variant="outlined: url(1200px-Greek_uc_sigma.svg.png)" ></Button>  */}
               {/* <Latex>{`Hello $x^2$ value $\\frac{1}{2}$ and $\\sum_{n=1}^{\infty} 2^{-n}$`}</Latex> */}
             </Box>
