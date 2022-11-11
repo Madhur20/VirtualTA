@@ -432,6 +432,9 @@
         "explain Quick search",
         "define Quick search",
         "what is Quick search",
+        "how about quick sort",
+        "why the quick sort",
+        "how quick sort work",
         "Quick search"
       ],
       "responses": [
@@ -517,7 +520,144 @@
       "responses": [
         "Think of it as a way to estimate how long a program will run. It can be used to compare how efficent a piece of code runs compared to another piece. Remember, this is an estimate so O(15n) and O(3n) would both simplify to O(n)."
       ]
+    },
+    {
+      "tag": "Expaining Arrays",
+      "patterns": [
+        "Explain Arrays.",
+        "What is an Array.",
+        "Arrays?",
+        "I do not understand Arrays.",
+        "I have difficulty with Arrays.",
+        "I dont understand Arrays",
+        "I dont understand how Arrays works",
+        "what does Arrays mean",
+        "why are Arrays useful",
+        "explain Arrays to me",
+        "What is Arrays"
+      ],
+      "responses": [
+        "An array is a linear data structure that is a collection of items of same data type stored at sequential memory locations. Example: int arr[5] = {1,2,3,4,5}; To learn more about arrays and how to use them: https://www.geeksforgeeks.org/introduction-to-arrays/"
+      ]
+    },
+    {
+      "tag": "Expaining Time Complexity of Arrays",
+      "patterns": [
+        "What is the time to access elements in arrays",
+        "how long does it take to access elements in arrays",
+        "time complexity of accessing elements into array",
+        "How long to search an array for an element?",
+        "time complexity of searching elements into array",
+        "What is the time to search for elements in arrays",
+        "time complexity of inserting elements into array",
+        "What is the time to insert elements in arrays",
+        "how long does it take to insert elements in arrays",
+        "Explain Time Complexity of Arrays.",
+        "What is time complexity of Arrays.",
+        "time complexity of Arrays?",
+        "I do not understand time complexity of Arrays.",
+        "I have difficulty with time complexity of Arrays.",
+        "I dont understand time complexity of Arrays",
+        "I dont understand how time complexity works for Arrays",
+        "I dont understand how big-O notation works of Arrays",
+        "explain big o of Arrays to me",
+        "explain complexity of Arrays to me",
+        "What is big O of Arrays"
+      ],
+      "responses": [
+        "For Arrays: Time complexity for Insertion is O(1) for a single element, Time complexity for Accessing is O(1) and Time complexity for searching is O(N). To learn more about arrays and how to use them: https://www.geeksforgeeks.org/introduction-to-arrays/"
+      ]
+    },
+    {
+      "tag": "Expaining Multi dimentional Arrays",
+      "patterns": [
+        "Explain Multidimensional Arrays.",
+        "What is a Multidimensional Array.",
+        "Multidimensional Arrays",
+        "I do not understand Multidimensional Arrays.",
+        "I have difficulty with Multidimensional Arrays.",
+        "I dont understand Multidimensional Arrays",
+        "I dont understand how Multidimensional Arrays works",
+        "what does Multidimensional Arrays mean",
+        "why are Multidimensional Arrays useful",
+        "explain Multidimensional Arrays to me",
+        "What is Multidimensional Arrays"
+      ],
+      "responses": [
+        "We can create arrays with any number of dimensions by making an Array of Arrays. However, the complexity also increases as the number of dimensions increases. The most used multidimensional array is the Two-Dimensional Array, which can be imagined as a square or an excel sheet with data in each cell. To learn more about Multidimensional arrays and how to use them: https://www.geeksforgeeks.org/multidimensional-arrays-c-cpp/"
+      ]
+    },
+    {
+      "tag": "Teaching assistant/Professor",
+      "patterns": [
+        "Who is my Professor?",
+        "How to contact Prof",
+        "Professor",
+        "Prof",
+        "Prof who",
+        "What da Prohphesssssor",
+        "Who is my TA?",
+        "How to contact TA",
+        "TA",
+        "Teaching Assistant",
+        "TA who",
+        "What da TeeAee"
+      ],
+      "responses": [
+        "The Professor of this class is Anjum Chida, and she can be accessed at: anjum.chida@utdallas.edu. The teaching assistant for this class is Akshay Kumar Jha, and he can be accessed at akshay.jha@utdallas.edu"
+      ]
+    },
+    {
+      "tag": "Exams",
+      "patterns": [
+        "When is my exam",
+        "When is my next exam",
+        "Exams",
+        "When is the final exam",
+        "Midterm",
+        "Finals",
+        "When are the midterms",
+        "What is on my next exam",
+        "Is the final cumalitive",
+        "Help me with exam pls",
+        "Exam when",
+        "Exaaaammmmmm"
+      ],
+      "responses": [
+        "The exams will be at the UTD Testing Center in SPN. The date for the midterm is on the 12th of October. The Finals are on the 7th of December. Please look at your Syllabus or contact you professor to find out what is on the exam."
+      ]
+    },
+    {
+      "tag": "Assignments due date",
+      "patterns": [
+        "When is my assignment due",
+        "When is my next assignment due",
+        "assignment due date",
+        "When is the assignment due",
+        "assignment due when",
+        "when assignment due"
+      ],
+      "responses": [
+        "All assignments are due on Wednesday at 11:00am. Late submissions will be penalized."
+      ]
+    },
+    {
+      "tag": "Attendance policy",
+      "patterns": [
+        "What is the Attendance policy",
+        "Attendacne",
+        "Attendance",
+        "Do i need to go to class",
+        "What did we do in class today",
+        "What is the attendance grade for this class"
+      ],
+      "responses": [
+        "Attendance contributes to 10% of your grade. Also ECS attendance policy dictates: absence in three consecutive lectures will result in the course grade being lowered by one letter. Absence in four consecutive lectures will automatically result in a failing grade (F) in the course."
+      ]
     }
+
+
+
 
 
 
