@@ -128,7 +128,9 @@ export default function ChatBox() {
       setMessages((messages) => messages.concat(ques));
       // setMessages([...messages, ques]);
       //await axios.post("http://localhost:5000/userQuery", question);
-      const ans = await fetch("http://localhost:8080/sendAnswer/" + question)
+      const ans = await fetch(
+        "https://virtual-ta-server.herokuapp.com/" + question
+      )
         .then((res) => res.json())
         .then((jsonRes) => {
           return jsonRes.answer;

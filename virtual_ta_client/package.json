@@ -2,7 +2,7 @@
   "name": "virtual_ta_client",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:8080/",
+  "proxy": "https://virtual-ta-server.herokuapp.com/",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -22,15 +22,11 @@
     "axios": "^1.1.3",
     "latex": "^0.0.1",
     "mui": "^0.0.1",
-    "next": "12.3.1",
+    "next": "^12.3.2",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
     "react-latex-next": "^2.2.0",
     "react-scrollable-feed": "^1.3.1",
     "styled-components": "^5.3.6"
-  },
-  "devDependencies": {
-    "eslint": "8.23.1",
-    "eslint-config-next": "12.3.1"
   }
 }
