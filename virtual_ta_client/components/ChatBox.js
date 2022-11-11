@@ -4,9 +4,12 @@ import TextField from "@mui/material/TextField";
 import Typography from "@mui/material";
 import axios from "axios";
 import ScrollableChat from "./ScrollableChat";
+import Avatar from "@material-ui/core/Avatar";
+import Button from "@material-ui/core/Button";
+// import { View, Text } from "react-native";
 // import "katex/dist/katex.min.css";
 
-// var Latex = require("react-latex-next");
+var Latex = require("react-latex-next");
 
 export default function ChatBox() {
   const messageType = [
@@ -21,13 +24,100 @@ export default function ChatBox() {
   const [answer, setAnswer] = React.useState("");
   const [messages, setMessages] = React.useState([]);
   const [latex, setLatex] = React.useState([]);
-
+  const [isVisible, setIsVisible] = React.useState(false);
+  const [store, setStore] = React.useState("")
   const handleChange = (e) => {
     // console.log(e);
     const val = e.target.value;
-
-    setQuestion(e.target.value);
+    setQuestion(val);
   };
+
+  function littleOmega() {
+    const lilO = "ω";
+    setQuestion(question + " " +lilO);
+  }
+  function square() {
+    const sigma = "²";
+    console.log(sigma);
+    setQuestion(question + sigma);
+  }
+  function ln() {
+    const ln = "ln"
+    setQuestion(question + " " + ln);
+  }
+  function theta() {
+    const theta = "θ";
+    setQuestion(question + " " + theta);
+  }
+  function log() {
+    const log = "log"
+    setQuestion(question + " " + log);
+  }
+  function squareRoot() {
+    const root = "√";
+    setQuestion(question + " " + root);
+  }
+  function omega() {
+    const omega = "Ω ";
+    setQuestion(question + " " + omega);
+  }
+  const sig = () => {
+    const sig = "Σ";
+    setQuestion(question + " "+sig)
+  }
+  function vis() {
+    setIsVisible(!isVisible)
+  }
+  const handlePowerChange = (e) => {
+    // console.log(e);
+    const val = e.target.value;
+
+    setStore(val);
+  }
+  const setPower = async(e) => {
+    
+    if (e.keyCode == 13) {
+      let superK = ""
+       for(let i = 0 ; i < store.length; i++) {
+      if(store.charAt(i) == "0") {
+         superK += '⁰'
+      }
+      else if(store.charAt(i) == "1") {
+        superK += '¹'
+     }
+     else if(store.charAt(i) == "2") {
+      superK += '²'
+    }
+    else if(store.charAt(i) == "3") {
+    superK += '³'
+    }
+    else if(store.charAt(i) == "4") {
+      superK += '⁴'
+    }
+    else if(store.charAt(i) == "5") {
+      superK += '⁵'
+    }
+    else if(store.charAt(i) == "6") {
+      superK += '⁶'
+    }
+    else if(store.charAt(i) == "7") {
+      superK += '⁷'
+    }
+    else if(store.charAt(i) == "8") {
+      superK += '⁸'
+    }
+    else if(store.charAt(i) == "9") {
+      superK += '⁹'
+    }
+     
+    }
+      setQuestion(question + superK) 
+      setIsVisible(!isVisible)
+      setStore("")
+    }
+   
+  }
+
   const sendChange = async (e) => {
     if (e.keyCode == 13) {
       // console.log(question);
@@ -60,7 +150,7 @@ export default function ChatBox() {
     }
   };
 
-  const l = `$$\\frac_{1}{2}$$`;
+  // const l = `$$\\frac_{1}{2}$$`;
 
   return (
     <div style={{ height: "90vh", width: "100%" }}>
@@ -139,6 +229,7 @@ export default function ChatBox() {
               border: "1px solid lightblue",
               borderRadius: "10px",
             }}
+            
           >
             {/* //<EquationEditor> */}
             <TextField
@@ -157,8 +248,45 @@ export default function ChatBox() {
                 height: "100px",
                 border: "1px solid lightblue",
                 borderRadius: "10px",
+                display: "flex",
+                justifyContent: "center",
+                flexWrap: "wrap",
+                padding: 1,
               }}
             >
+              <Button style={{width: 40, height: 40, backgroundColor: "#35f705", margin:10}}  variant="outlined"  size="small" onClick={sig}
+                startIcon={<Avatar sx={{maxWidth: 10, maxHeight: 10}} src={"/1200px-Greek_uc_sigma.svg.png"}/> }>
+                  
+              </Button>
+              <Button style={{width: 40, height: 40, backgroundColor: "#35f705", margin:10}} variant="outlined" onClick={theta}
+                startIcon={<Avatar src={"/theta.png"}/> }>
+                  
+              </Button>
+              <Button style={{width: 40, height: 40, backgroundColor: "#35f705", margin:10}} variant="outlined" onClick={log}
+                startIcon={<Avatar style={{ justifyContent: "center", display: "flex" }} src={"/log.png"}/> }>
+                  
+              </Button>
+              <Button style={{width: 40, height: 40, backgroundColor: "#35f705", margin:10}} variant="outlined" onClick={ln}
+                 startIcon={<Avatar src={"/ln.png"}/> }>
+                  
+              </Button>
+              <Button style={{width: 40, height: 40, backgroundColor: "#35f705", margin:10}} variant="outlined" onClick={squareRoot}
+                startIcon={<Avatar src={"/square-root.png"}/> }>
+                  
+              </Button>
+              <Button style={{width: 40, height: 40, backgroundColor: "#35f705", margin:10}} variant="outlined" onClick={littleOmega}
+                startIcon={<Avatar src={"/omega.png"}/> }>            
+              </Button>
+              <Box sx ={{display: "flex", flexDirection: "column"}}>  
+              {!isVisible && <Button style={{width: 40, height: 40, backgroundColor: "#35f705", margin:10}} variant="outlined" onClick={vis}
+                startIcon={<Avatar style={{ justifyContent: "center", display: "flex", alignItems: "center", lineHeight: 0, letterSpacing: 0, flexDirection: "column" }} src={"/x^y.png"}/> }>            
+              </Button>}
+                {isVisible && <TextField sx={{zIndex:"10"}}value = {store} onChange= {handlePowerChange} onKeyDown = {setPower} id="power" label="y=" style ={{ width: 65, marginLeft: 10, }}></TextField>}
+              </Box>
+              <Button style={{width: 40, height: 40, backgroundColor: "#35f705", margin:10}} variant="outlined" onClick={omega}
+                startIcon={<Avatar src={"bigOmega.png"}/> }>            
+              </Button>
+              {/* <Button variant="outlined: url(1200px-Greek_uc_sigma.svg.png)" ></Button>  */}
               {/* <Latex>{`Hello $x^2$ value $\\frac{1}{2}$ and $\\sum_{n=1}^{\infty} 2^{-n}$`}</Latex> */}
             </Box>
           </Box>
