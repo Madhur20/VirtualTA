@@ -1,14 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import ScrollableFeed from "react-scrollable-feed";
 
 const ScrollableChat = ({ message }) => {
   console.log(message);
   // const messages = e.target.value;
+
+  const [margin, setMargin] = useState(false);
+
   return (
     <ScrollableFeed>
       {message &&
         message.map((msg, ind) => (
-          <div key={msg.id + ind} style={{ display: "flex", width: "100vh" }}>
+          <div
+            key={msg.id + ind}
+            style={{
+              display: "flex",
+              justifyContent: `${msg.id === "fromUser" ? "right" : "left"}`,
+            }}
+          >
             <span
               style={{
                 backgroundColor: `${
@@ -17,8 +26,6 @@ const ScrollableChat = ({ message }) => {
                 borderRadius: "20px",
                 padding: "5px 5px",
                 maxWidth: "75%",
-                marginLeft: `${msg.id === "fromUser" ? "auto" : "0px"}`,
-                marginRight: `${msg.id === "fromUser" ? "0px" : "auto"}`,
                 marginTop: "5px",
                 overflowX: "initial",
               }}
