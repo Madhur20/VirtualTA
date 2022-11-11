@@ -517,6 +517,91 @@
       "responses": [
         "Think of it as a way to estimate how long a program will run. It can be used to compare how efficent a piece of code runs compared to another piece. Remember, this is an estimate so O(15n) and O(3n) would both simplify to O(n)."
       ]
+    },
+    {
+      "tag": "Binary Tree",
+      "patterns":[
+        "Explain Binary Trees",
+		"How do Binary trees work",
+        "Binary tree explination",
+        "explain Binary tree",
+        "define binary tree",
+        "what is Binary tree",
+        "binary tree"
+      ],
+      "responses":[
+        "Binary tree is a data structure with 2 children at most. It is represented by a pointer to the topmost node."
+      ]
+    },
+	    {
+      "tag": "Binary Tree Time complexity",
+      "patterns":[
+        "Explain Binary Trees Time Complexity",
+		"What is the time complexity of the Binary search tree?",
+        "time complexity binary tree",
+        "Binary tree complexity time",
+        "time complexity of Binary tree" 
+      ],
+      "responses":[
+        "Binary tree time complexity is O(h)"
+      ]
+    },
+	{
+      "tag": "Graphs",
+      "patterns": [
+        "what is a Graph",
+        "Graph",
+        "explain Graphs",
+        "Graph meaning",
+        "Define Graphs",
+        "what are Graphs"
+        
+      ],
+      "responses": [
+        "Graphs are non-linear data structures consisting of vertices and edges. For more info go to:https://www.geeksforgeeks.org/graph-data-structure-and-algorithms/ "
+      ]
+    },
+	{
+      "tag": "BFS",
+      "patterns": [
+        "what is a BFS",
+        "BFS",
+        "explain BFS",
+        "BFS meaning",
+        "Define BFS",
+        "what are BFS",
+		"what is a Depth First Search",
+        "Depth First Search",
+        "explain Depth First Search",
+        "Depth First Search meaning",
+        "Define Depth First Search",
+        "what are Depth First Search"
+        
+      ],
+      "responses": [
+        "BFS is an algorithm for searching a tree data structure for a node that satisfies a given property."
+      ]
+    },
+	{
+      "tag": "DFS",
+      "patterns": [
+        "what is a DFS",
+        "DFS",
+        "explain DFS",
+        "DFS meaning",
+        "Define DFS",
+        "what are DFS",
+		"what is a Depth First Search",
+        "Depth First Search",
+        "explain Depth First Search",
+        "Depth First Search meaning",
+        "Define Depth First Search",
+        "what are Depth First Search"
+        
+      ],
+      "responses": [
+        "DFS is an algorithm for traversing searching tree or graph data structures."
+      ]
     }
 
 
