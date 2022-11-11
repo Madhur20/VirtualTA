@@ -812,6 +812,114 @@
       "responses": [
         "Attendance contributes to 10% of your grade. Also ECS attendance policy dictates: absence in three consecutive lectures will result in the course grade being lowered by one letter. Absence in four consecutive lectures will automatically result in a failing grade (F) in the course."
       ]
+    },
+    {
+      "tag": "Binary Tree",
+      "patterns":[
+        "Explain Binary Trees",
+		    "How do Binary trees work",
+        "Binary tree explination",
+        "explain Binary tree",
+        "define binary tree",
+        "what is Binary tree",
+        "binary tree",
+        "How does binary trees work",
+        "Do binary trees work",
+        "I do not understand binary trees",
+        "Binary tree explination please I am failing my class",
+        "Understanding binary trees"
+      ],
+      "responses":[
+        "Binary tree is a data structure with 2 children at most. It is represented by a pointer to the topmost node."
+      ]
+    },
+	    {
+      "tag": "Binary Tree Time complexity",
+      "patterns":[
+        "Explain Binary Trees Time Complexity",
+		    "What is the time complexity of the Binary search tree?",
+        "time complexity binary tree",
+        "Binary tree complexity time",
+        "time complexity of Binary tree",
+        "Binary trees have what time complexity?",
+        "If i was a binary tree, what time complexity would I have" 
+      ],
+      "responses":[
+        "Binary tree time complexity is O(h)"
+      ]
+    },
+	{
+      "tag": "Graphs",
+      "patterns": [
+        "what is a Graph",
+        "Graph",
+        "explain Graphs",
+        "Graph meaning",
+        "Define Graphs",
+        "what are Graphs",
+        "Explain what graphs are",
+        "Explain what graphs do",
+        "I do not understand what graphs are",
+        "I do not undersatnd what graphs do",
+        "Please explain what graphs are",
+        "Why are graphs needed",
+        "What graph"
+      ],
+      "responses": [
+        "Graphs are non-linear data structures consisting of vertices and edges. For more info go to:https://www.geeksforgeeks.org/graph-data-structure-and-algorithms/ "
+      ]
+    },
+	{
+      "tag": "BFS",
+      "patterns": [
+        "what is a BFS",
+        "BFS",
+        "explain BFS",
+        "BFS meaning",
+        "Define BFS",
+        "what are BFS",
+		    "what is a Breadth First Search",
+        "Breadth First Search",
+        "explain Breadth First Search",
+        "Breadth First Search meaning",
+        "Define Breadth First Search",
+        "what are Breadth First Searchs",
+        "Why is BFS useful",
+        "what do you use BFS for",
+        "Explain BFS to me",
+        "I do not understand BFS",
+        "How does BFS work",
+        "does BFS work"
+      ],
+      "responses": [
+        "BFS is an algorithm for searching a tree data structure for a node that satisfies a given property. For more info go to: https://www.geeksforgeeks.org/breadth-first-search-or-bfs-for-a-graph/"
+      ]
+    },
+	{
+      "tag": "DFS",
+      "patterns": [
+        "what is a DFS",
+        "DFS",
+        "explain DFS",
+        "DFS meaning",
+        "Define DFS",
+        "what are DFS",
+		    "what is a Depth First Search",
+        "Depth First Search",
+        "explain Depth First Search",
+        "Depth First Search meaning",
+        "Define Depth First Search",
+        "what are Depth First Searchs",
+        "Why is DFS useful",
+        "what do you use DFS for",
+        "How does DFS work",
+        "Explain DFS to me",
+        "I do not understand DFS",
+        "Does DFS work"
+      ],
+      "responses": [
+        "DFS is an algorithm for traversing searching tree or graph data structures. For more info go to: https://www.geeksforgeeks.org/depth-first-search-or-dfs-for-a-graph/"
+      ]
     }
 
 
