@@ -23,9 +23,12 @@ export default function ChatBox() {
   const [question, setQuestion] = React.useState("");
   const [answer, setAnswer] = React.useState("");
   const [messages, setMessages] = React.useState([]);
-  const [isVisible, setIsVisible] = React.useState(false);
+  const [isExponentVisible, setIsExponentVisible] = React.useState(false);
+  const [isSigmaVisible, setIsSigmaVisible] = React.useState(false);
   const [isLoading, setIsLoading] = React.useState(false);
-  const [store, setStore] = React.useState("");
+  const [storeExponent, setStoreExponent] = React.useState("");
+  const [storeFromSigmaValue, setStoreFromSigmaValue] = React.useState("");
+  const [storeToSigmaValue, setStoreToSigmaValue] = React.useState("");
   const handleChange = (e) => {
     // console.log(e);
     const val = e.target.value;
@@ -38,7 +41,7 @@ export default function ChatBox() {
   }
   function square() {
     const sigma = "²";
-    console.log(sigma);
+    // console.log(sigma);
     setQuestion(question + sigma);
   }
   function ln() {
@@ -62,47 +65,58 @@ export default function ChatBox() {
     setQuestion(question + " " + omega);
   }
   const sig = () => {
+    setIsSigmaVisible(!isSigmaVisible);
     const sig = "Σ";
     setQuestion(question + " " + sig);
   };
+  const handleInitValueChange = (e) => {
+    const val = e.target.value;
+    console.log(val);
+    setStoreFromSigmaValue(val);
+  };
+  const handleFinalValueChange = (e) => {
+    const val = e.target.value;
+    console.log(val);
+    setStoreToSigmaValue(val);
+  };
   function vis() {
-    setIsVisible(!isVisible);
+    setIsExponentVisible(!isExponentVisible);
   }
   const handlePowerChange = (e) => {
     // console.log(e);
     const val = e.target.value;
 
-    setStore(val);
+    setStoreExponent(val);
   };
   const setPower = async (e) => {
     if (e.keyCode == 13) {
       let superK = "";
-      for (let i = 0; i < store.length; i++) {
-        if (store.charAt(i) == "0") {
+      for (let i = 0; i < storeExponent.length; i++) {
+        if (storeExponent.charAt(i) == "0") {
           superK += "⁰";
-        } else if (store.charAt(i) == "1") {
+        } else if (storeExponent.charAt(i) == "1") {
           superK += "¹";
-        } else if (store.charAt(i) == "2") {
+        } else if (storeExponent.charAt(i) == "2") {
           superK += "²";
-        } else if (store.charAt(i) == "3") {
+        } else if (storeExponent.charAt(i) == "3") {
           superK += "³";
-        } else if (store.charAt(i) == "4") {
+        } else if (storeExponent.charAt(i) == "4") {
           superK += "⁴";
-        } else if (store.charAt(i) == "5") {
+        } else if (storeExponent.charAt(i) == "5") {
           superK += "⁵";
-        } else if (store.charAt(i) == "6") {
+        } else if (storeExponent.charAt(i) == "6") {
           superK += "⁶";
-        } else if (store.charAt(i) == "7") {
+        } else if (storeExponent.charAt(i) == "7") {
           superK += "⁷";
-        } else if (store.charAt(i) == "8") {
+        } else if (storeExponent.charAt(i) == "8") {
           superK += "⁸";
-        } else if (store.charAt(i) == "9") {
+        } else if (storeExponent.charAt(i) == "9") {
           superK += "⁹";
         }
       }
       setQuestion(question + superK);
-      setIsVisible(!isVisible);
-      setStore("");
+      setIsExponentVisible(!isExponentVisible);
+      setStoreExponent("");
     }
   };
 
@@ -265,23 +279,64 @@ export default function ChatBox() {
                 flexWrap: "wrap",
               }}
             >
-              <Button
-                style={{
-                  width: 40,
-                  height: 40,
-                  backgroundColor: "#F7EAEF",
-                  margin: 10,
+              <Box
+                sx={{
+                  display: "flex",
+                  flexDirection: "row",
+                  border: `${isSigmaVisible ? "1px solid grey" : "0px"}`,
+                  padding: `${isSigmaVisible ? "5px" : "0px"}`,
                 }}
-                variant="outlined"
-                size="small"
-                onClick={sig}
-                startIcon={
-                  <Avatar
-                    sx={{ maxWidth: 10, maxHeight: 10 }}
-                    src={"/1200px-Greek_uc_sigma.svg.png"}
-                  />
-                }
-              ></Button>
+              >
+                <Button
+                  style={{
+                    width: 40,
+                    height: 40,
+                    backgroundColor: "#F7EAEF",
+                    margin: 10,
+                  }}
+                  variant="outlined"
+                  size="small"
+                  onClick={sig}
+                  // disabled={isSigmaVisible ? "true" : "false"}
+                  startIcon={
+                    <Avatar
+                      sx={{ maxWidth: 10, maxHeight: 10 }}
+                      src={"/1200px-Greek_uc_sigma.svg.png"}
+                    />
+                  }
+                ></Button>
+
+                {isSigmaVisible && (
+                  <Box
+                    sx={{
+                      display: "flex",
+                      flexDirection: "column",
+                      justifyContent: "center",
+                      marginRight: 2,
+                    }}
+                  >
+                    <TextField
+                      value={storeFromSigmaValue}
+                      onChange={handleInitValueChange}
+                      onKeyDown={setPower}
+                      id="sigmaFrom"
+                      label="i from"
+                      style={{ width: 65, marginLeft: 10 }}
+                      size="small"
+                    ></TextField>
+                    <TextField
+                      value={storeToSigmaValue}
+                      onChange={handleFinalValueChange}
+                      onKeyDown={setPower}
+                      id="sigmaTo"
+                      label="i to"
+                      style={{ maxWidth: 65, marginLeft: 10 }}
+                      size="small"
+                    ></TextField>
+                  </Box>
+                )}
+              </Box>
+
               <Button
                 style={{
                   width: 40,
@@ -343,7 +398,7 @@ export default function ChatBox() {
                 startIcon={<Avatar src={"/omega.png"} />}
               ></Button>
               <Box sx={{ display: "flex", flexDirection: "column" }}>
-                {!isVisible && (
+                {!isExponentVisible && (
                   <Button
                     style={{
                       width: 40,
@@ -368,10 +423,9 @@ export default function ChatBox() {
                     }
                   ></Button>
                 )}
-                {isVisible && (
+                {isExponentVisible && (
                   <TextField
-                    sx={{ zIndex: "10" }}
-                    value={store}
+                    value={storeExponent}
                     onChange={handlePowerChange}
                     onKeyDown={setPower}
                     id="power"

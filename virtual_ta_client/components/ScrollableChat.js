@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ScrollableFeed from "react-scrollable-feed";
 
 const ScrollableChat = ({ message }) => {
-  console.log(message);
+  // console.log(message);
   // const messages = e.target.value;
 
   const [margin, setMargin] = useState(false);
