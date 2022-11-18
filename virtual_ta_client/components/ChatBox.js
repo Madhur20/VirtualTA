@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useEffect, useState } from "react";
 import { Box } from "@mui/material";
 import TextField from "@mui/material/TextField";
 import Typography from "@mui/material";
@@ -7,25 +8,17 @@ import ScrollableChat from "./ScrollableChat";
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import "three-dots";
-// import { View, Text } from "react-native";
-// import "katex/dist/katex.min.css";
-
-var Latex = require("react-latex-next");
 
 export default function ChatBox() {
-  const messageType = [
-    {
-      id: String,
-      msg: String,
-    },
-  ];
-
   const [question, setQuestion] = React.useState("");
   const [answer, setAnswer] = React.useState("");
   const [messages, setMessages] = React.useState([]);
-  const [isVisible, setIsVisible] = React.useState(false);
+  const [isExponentVisible, setIsExponentVisible] = React.useState(false);
+  const [isSigmaVisible, setIsSigmaVisible] = React.useState(false);
   const [isLoading, setIsLoading] = React.useState(false);
-  const [store, setStore] = React.useState("");
+  const [storeExponent, setStoreExponent] = React.useState("");
+  const [storeFromSigmaValue, setStoreFromSigmaValue] = React.useState("");
+  const [storeToSigmaValue, setStoreToSigmaValue] = React.useState("");
   const handleChange = (e) => {
     // console.log(e);
     const val = e.target.value;
@@ -36,11 +29,7 @@ export default function ChatBox() {
     const lilO = "ω";
     setQuestion(question + " " + lilO);
   }
-  function square() {
-    const sigma = "²";
-    console.log(sigma);
-    setQuestion(question + sigma);
-  }
+
   function ln() {
     const ln = "ln";
     setQuestion(question + " " + ln);
@@ -62,47 +51,123 @@ export default function ChatBox() {
     setQuestion(question + " " + omega);
   }
   const sig = () => {
-    const sig = "Σ";
-    setQuestion(question + " " + sig);
+    setIsSigmaVisible(!isSigmaVisible);
+  };
+  const setSigma = (e) => {
+    if (e.keyCode == "13") {
+      const sig = "Σ";
+      setQuestion(
+        question +
+          " (" +
+          storeFromSigmaValue +
+          " -> " +
+          storeToSigmaValue +
+          ")" +
+          sig
+      );
+      setIsSigmaVisible(!isSigmaVisible);
+    }
+  };
+  const handleInitValueChange = (e) => {
+    const val = e.target.value;
+    console.log(val);
+    setStoreFromSigmaValue(val);
+  };
+  const handleFinalValueChange = (e) => {
+    const val = e.target.value;
+    console.log(val);
+    setStoreToSigmaValue(val);
   };
   function vis() {
-    setIsVisible(!isVisible);
+    setIsExponentVisible(!isExponentVisible);
   }
   const handlePowerChange = (e) => {
     // console.log(e);
     const val = e.target.value;
 
-    setStore(val);
+    setStoreExponent(val);
   };
   const setPower = async (e) => {
     if (e.keyCode == 13) {
       let superK = "";
-      for (let i = 0; i < store.length; i++) {
-        if (store.charAt(i) == "0") {
+      for (let i = 0; i < storeExponent.length; i++) {
+        if (storeExponent.charAt(i) == "0") {
           superK += "⁰";
-        } else if (store.charAt(i) == "1") {
+        } else if (storeExponent.charAt(i) == "1") {
           superK += "¹";
-        } else if (store.charAt(i) == "2") {
+        } else if (storeExponent.charAt(i) == "2") {
           superK += "²";
-        } else if (store.charAt(i) == "3") {
+        } else if (storeExponent.charAt(i) == "3") {
           superK += "³";
-        } else if (store.charAt(i) == "4") {
+        } else if (storeExponent.charAt(i) == "4") {
           superK += "⁴";
-        } else if (store.charAt(i) == "5") {
+        } else if (storeExponent.charAt(i) == "5") {
           superK += "⁵";
-        } else if (store.charAt(i) == "6") {
+        } else if (storeExponent.charAt(i) == "6") {
           superK += "⁶";
-        } else if (store.charAt(i) == "7") {
+        } else if (storeExponent.charAt(i) == "7") {
           superK += "⁷";
-        } else if (store.charAt(i) == "8") {
+        } else if (storeExponent.charAt(i) == "8") {
           superK += "⁸";
-        } else if (store.charAt(i) == "9") {
+        } else if (storeExponent.charAt(i) == "9") {
           superK += "⁹";
+        } else if (storeExponent.charAt(i).toLowerCase() == "a") {
+          superK += "ᵃ";
+        } else if (storeExponent.charAt(i).toLowerCase() == "b") {
+          superK += "ᵇ";
+        } else if (storeExponent.charAt(i).toLowerCase() == "c") {
+          superK += "ᶜ";
+        } else if (storeExponent.charAt(i).toLowerCase() == "d") {
+          superK += "ᵈ";
+        } else if (storeExponent.charAt(i).toLowerCase() == "e") {
+          superK += "ᵉ";
+        } else if (storeExponent.charAt(i).toLowerCase() == "f") {
+          superK += "ᶠ";
+        } else if (storeExponent.charAt(i).toLowerCase() == "g") {
+          superK += "ᶢ";
+        } else if (storeExponent.charAt(i).toLowerCase() == "h") {
+          superK += "ʰ";
+        } else if (storeExponent.charAt(i).toLowerCase() == "i") {
+          superK += "ⁱ";
+        } else if (storeExponent.charAt(i).toLowerCase() == "j") {
+          superK += "ʲ";
+        } else if (storeExponent.charAt(i).toLowerCase() == "k") {
+          superK += "ᵏ";
+        } else if (storeExponent.charAt(i).toLowerCase() == "l") {
+          superK += "ˡ";
+        } else if (storeExponent.charAt(i).toLowerCase() == "m") {
+          superK += "ᵐ";
+        } else if (storeExponent.charAt(i).toLowerCase() == "n") {
+          superK += "ⁿ";
+        } else if (storeExponent.charAt(i).toLowerCase() == "o") {
+          superK += "ᵒ";
+        } else if (storeExponent.charAt(i).toLowerCase() == "p") {
+          superK += "ᵖ";
+        } else if (storeExponent.charAt(i).toLowerCase() == "q") {
+          superK += "";
+        } else if (storeExponent.charAt(i).toLowerCase() == "r") {
+          superK += "ᴿ";
+        } else if (storeExponent.charAt(i).toLowerCase() == "s") {
+          superK += "ˢ";
+        } else if (storeExponent.charAt(i).toLowerCase() == "t") {
+          superK += "ᵗ";
+        } else if (storeExponent.charAt(i).toLowerCase() == "u") {
+          superK += "ᵘ";
+        } else if (storeExponent.charAt(i).toLowerCase() == "v") {
+          superK += "ᵛ";
+        } else if (storeExponent.charAt(i).toLowerCase() == "x") {
+          superK += "ᵡ";
+        } else if (storeExponent.charAt(i).toLowerCase() == "y") {
+          superK += "ʸ";
+        } else if (storeExponent.charAt(i).toLowerCase() == "z") {
+          superK += "ᶻ";
+        } else if (storeExponent.charAt(i).toLowerCase() == "w") {
+          superK += "ᵂ";
         }
       }
       setQuestion(question + superK);
-      setIsVisible(!isVisible);
-      setStore("");
+      setIsExponentVisible(!isExponentVisible);
+      setStoreExponent("");
     }
   };
 
@@ -146,8 +211,6 @@ export default function ChatBox() {
     }
   };
 
-  // const l = `$$\\frac_{1}{2}$$`;
-
   return (
     <div style={{ height: "90vh", width: "100%" }}>
       <Box
@@ -184,6 +247,7 @@ export default function ChatBox() {
             Ask your doubts below!
           </h1>
         </Box>
+
         <Box
           sx={{
             width: "100%",
@@ -265,23 +329,117 @@ export default function ChatBox() {
                 flexWrap: "wrap",
               }}
             >
-              <Button
-                style={{
-                  width: 40,
-                  height: 40,
-                  backgroundColor: "#F7EAEF",
-                  margin: 10,
+              <Box
+                sx={{
+                  display: "flex",
+                  flexDirection: "row",
+                  border: `${isSigmaVisible ? "1px dotted grey" : "0px"}`,
+                  padding: `${isSigmaVisible ? "5px" : "0px"}`,
                 }}
-                variant="outlined"
-                size="small"
-                onClick={sig}
-                startIcon={
-                  <Avatar
-                    sx={{ maxWidth: 10, maxHeight: 10 }}
-                    src={"/1200px-Greek_uc_sigma.svg.png"}
-                  />
-                }
-              ></Button>
+              >
+                <Button
+                  style={{
+                    width: 40,
+                    height: 40,
+                    backgroundColor: "#F7EAEF",
+                    margin: 10,
+                    display: "flex",
+                    justifyContent: "center",
+                  }}
+                  variant="outlined"
+                  size="small"
+                  onClick={sig}
+                  // disabled={isSigmaVisible ? "true" : "false"}
+                  startIcon={
+                    <Avatar
+                      sx={{ maxWidth: 10, maxHeight: 10 }}
+                      src={"/1200px-Greek_uc_sigma.svg.png"}
+                    />
+                  }
+                ></Button>
+
+                {isSigmaVisible && (
+                  <Box
+                    sx={{
+                      display: "flex",
+                      flexDirection: "column",
+                      justifyContent: "center",
+                      marginRight: 2,
+                    }}
+                  >
+                    <form
+                      style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        justifyContent: "right",
+                      }}
+                    >
+                      <table>
+                        <tr
+                          style={{ display: "flex", justifyContent: "right" }}
+                        >
+                          <tc>
+                            <label>i from:</label>
+                          </tc>
+                          <tc>
+                            <input
+                              type="text"
+                              name="name"
+                              onChange={handleInitValueChange}
+                              style={{
+                                backgroundColor: "white",
+                                border: "1px solid black",
+                                color: "black",
+                                maxWidth: "25px",
+                              }}
+                            />
+                          </tc>
+                        </tr>
+                        <tr
+                          style={{ display: "flex", justifyContent: "right" }}
+                        >
+                          <tc>
+                            <label>i to:</label>
+                          </tc>
+                          <tc>
+                            <input
+                              type="text"
+                              name="name"
+                              onChange={handleFinalValueChange}
+                              onKeyDown={setSigma}
+                              style={{
+                                backgroundColor: "white",
+                                border: "1px solid black",
+                                color: "black",
+                                maxWidth: "25px",
+                              }}
+                            />
+                          </tc>
+                        </tr>
+                      </table>
+                    </form>
+                    {/* <TextField
+                      value={storeFromSigmaValue}
+                      onChange={handleInitValueChange}
+                      onKeyDown={setPower}
+                      id="sigmaFrom"
+                      label="i from"
+                      style={{ width: 65, marginLeft: 10 }}
+                      size="small"
+                    ></TextField> */}
+                    {/* <TextField
+                      value={storeToSigmaValue}
+                      onChange={handleFinalValueChange}
+                      onKeyDown={setPower}
+                      id="sigmaTo"
+                      label="i to"
+                      style={{ maxWidth: 65, marginLeft: 10 }}
+                      size="small"
+                    ></TextField> */}
+                  </Box>
+                )}
+              </Box>
+
               <Button
                 style={{
                   width: 40,
@@ -343,7 +501,7 @@ export default function ChatBox() {
                 startIcon={<Avatar src={"/omega.png"} />}
               ></Button>
               <Box sx={{ display: "flex", flexDirection: "column" }}>
-                {!isVisible && (
+                {!isExponentVisible && (
                   <Button
                     style={{
                       width: 40,
@@ -368,10 +526,9 @@ export default function ChatBox() {
                     }
                   ></Button>
                 )}
-                {isVisible && (
+                {isExponentVisible && (
                   <TextField
-                    sx={{ zIndex: "10" }}
-                    value={store}
+                    value={storeExponent}
                     onChange={handlePowerChange}
                     onKeyDown={setPower}
                     id="power"
@@ -391,8 +548,6 @@ export default function ChatBox() {
                 onClick={omega}
                 startIcon={<Avatar src={"bigOmega.png"} />}
               ></Button>
-              {/* <Button variant="outlined: url(1200px-Greek_uc_sigma.svg.png)" ></Button>  */}
-              {/* <Latex>{`Hello $x^2$ value $\\frac{1}{2}$ and $\\sum_{n=1}^{\infty} 2^{-n}$`}</Latex> */}
             </Box>
           </Box>
         </Box>
