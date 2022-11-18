@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useEffect, useState } from "react";
 import { Box } from "@mui/material";
 import TextField from "@mui/material/TextField";
 import Typography from "@mui/material";
@@ -66,8 +67,21 @@ export default function ChatBox() {
   }
   const sig = () => {
     setIsSigmaVisible(!isSigmaVisible);
-    const sig = "Σ";
-    setQuestion(question + " " + sig);
+  };
+  const setSigma = (e) => {
+    if (e.keyCode == "13") {
+      const sig = "Σ";
+      setQuestion(
+        question +
+          " (" +
+          storeFromSigmaValue +
+          " -> " +
+          storeToSigmaValue +
+          ")" +
+          sig
+      );
+      setIsSigmaVisible(!isSigmaVisible);
+    }
   };
   const handleInitValueChange = (e) => {
     const val = e.target.value;
@@ -283,7 +297,7 @@ export default function ChatBox() {
                 sx={{
                   display: "flex",
                   flexDirection: "row",
-                  border: `${isSigmaVisible ? "1px solid grey" : "0px"}`,
+                  border: `${isSigmaVisible ? "1px dotted grey" : "0px"}`,
                   padding: `${isSigmaVisible ? "5px" : "0px"}`,
                 }}
               >
@@ -293,6 +307,8 @@ export default function ChatBox() {
                     height: 40,
                     backgroundColor: "#F7EAEF",
                     margin: 10,
+                    display: "flex",
+                    justifyContent: "center",
                   }}
                   variant="outlined"
                   size="small"
@@ -315,7 +331,58 @@ export default function ChatBox() {
                       marginRight: 2,
                     }}
                   >
-                    <TextField
+                    <form
+                      style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        justifyContent: "right",
+                      }}
+                    >
+                      <table>
+                        <tr
+                          style={{ display: "flex", justifyContent: "right" }}
+                        >
+                          <tc>
+                            <label>i from:</label>
+                          </tc>
+                          <tc>
+                            <input
+                              type="text"
+                              name="name"
+                              onChange={handleInitValueChange}
+                              style={{
+                                backgroundColor: "white",
+                                border: "1px solid black",
+                                color: "black",
+                                maxWidth: "25px",
+                              }}
+                            />
+                          </tc>
+                        </tr>
+                        <tr
+                          style={{ display: "flex", justifyContent: "right" }}
+                        >
+                          <tc>
+                            <label>i to:</label>
+                          </tc>
+                          <tc>
+                            <input
+                              type="text"
+                              name="name"
+                              onChange={handleFinalValueChange}
+                              onKeyDown={setSigma}
+                              style={{
+                                backgroundColor: "white",
+                                border: "1px solid black",
+                                color: "black",
+                                maxWidth: "25px",
+                              }}
+                            />
+                          </tc>
+                        </tr>
+                      </table>
+                    </form>
+                    {/* <TextField
                       value={storeFromSigmaValue}
                       onChange={handleInitValueChange}
                       onKeyDown={setPower}
@@ -323,8 +390,8 @@ export default function ChatBox() {
                       label="i from"
                       style={{ width: 65, marginLeft: 10 }}
                       size="small"
-                    ></TextField>
-                    <TextField
+                    ></TextField> */}
+                    {/* <TextField
                       value={storeToSigmaValue}
                       onChange={handleFinalValueChange}
                       onKeyDown={setPower}
@@ -332,7 +399,7 @@ export default function ChatBox() {
                       label="i to"
                       style={{ maxWidth: 65, marginLeft: 10 }}
                       size="small"
-                    ></TextField>
+                    ></TextField> */}
                   </Box>
                 )}
               </Box>
