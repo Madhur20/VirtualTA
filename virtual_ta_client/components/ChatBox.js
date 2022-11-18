@@ -8,19 +8,8 @@ import ScrollableChat from "./ScrollableChat";
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import "three-dots";
-// import { View, Text } from "react-native";
-// import "katex/dist/katex.min.css";
-
-var Latex = require("react-latex-next");
 
 export default function ChatBox() {
-  const messageType = [
-    {
-      id: String,
-      msg: String,
-    },
-  ];
-
   const [question, setQuestion] = React.useState("");
   const [answer, setAnswer] = React.useState("");
   const [messages, setMessages] = React.useState([]);
@@ -40,11 +29,7 @@ export default function ChatBox() {
     const lilO = "ω";
     setQuestion(question + " " + lilO);
   }
-  function square() {
-    const sigma = "²";
-    // console.log(sigma);
-    setQuestion(question + sigma);
-  }
+
   function ln() {
     const ln = "ln";
     setQuestion(question + " " + ln);
@@ -126,6 +111,58 @@ export default function ChatBox() {
           superK += "⁸";
         } else if (storeExponent.charAt(i) == "9") {
           superK += "⁹";
+        } else if (storeExponent.charAt(i).toLowerCase() == "a") {
+          superK += "ᵃ";
+        } else if (storeExponent.charAt(i).toLowerCase() == "b") {
+          superK += "ᵇ";
+        } else if (storeExponent.charAt(i).toLowerCase() == "c") {
+          superK += "ᶜ";
+        } else if (storeExponent.charAt(i).toLowerCase() == "d") {
+          superK += "ᵈ";
+        } else if (storeExponent.charAt(i).toLowerCase() == "e") {
+          superK += "ᵉ";
+        } else if (storeExponent.charAt(i).toLowerCase() == "f") {
+          superK += "ᶠ";
+        } else if (storeExponent.charAt(i).toLowerCase() == "g") {
+          superK += "ᶢ";
+        } else if (storeExponent.charAt(i).toLowerCase() == "h") {
+          superK += "ʰ";
+        } else if (storeExponent.charAt(i).toLowerCase() == "i") {
+          superK += "ⁱ";
+        } else if (storeExponent.charAt(i).toLowerCase() == "j") {
+          superK += "ʲ";
+        } else if (storeExponent.charAt(i).toLowerCase() == "k") {
+          superK += "ᵏ";
+        } else if (storeExponent.charAt(i).toLowerCase() == "l") {
+          superK += "ˡ";
+        } else if (storeExponent.charAt(i).toLowerCase() == "m") {
+          superK += "ᵐ";
+        } else if (storeExponent.charAt(i).toLowerCase() == "n") {
+          superK += "ⁿ";
+        } else if (storeExponent.charAt(i).toLowerCase() == "o") {
+          superK += "ᵒ";
+        } else if (storeExponent.charAt(i).toLowerCase() == "p") {
+          superK += "ᵖ";
+        } else if (storeExponent.charAt(i).toLowerCase() == "q") {
+          superK += "";
+        } else if (storeExponent.charAt(i).toLowerCase() == "r") {
+          superK += "ᴿ";
+        } else if (storeExponent.charAt(i).toLowerCase() == "s") {
+          superK += "ˢ";
+        } else if (storeExponent.charAt(i).toLowerCase() == "t") {
+          superK += "ᵗ";
+        } else if (storeExponent.charAt(i).toLowerCase() == "u") {
+          superK += "ᵘ";
+        } else if (storeExponent.charAt(i).toLowerCase() == "v") {
+          superK += "ᵛ";
+        } else if (storeExponent.charAt(i).toLowerCase() == "x") {
+          superK += "ᵡ";
+        } else if (storeExponent.charAt(i).toLowerCase() == "y") {
+          superK += "ʸ";
+        } else if (storeExponent.charAt(i).toLowerCase() == "z") {
+          superK += "ᶻ";
+        } else if (storeExponent.charAt(i).toLowerCase() == "w") {
+          superK += "ᵂ";
         }
       }
       setQuestion(question + superK);
@@ -174,8 +211,6 @@ export default function ChatBox() {
     }
   };
 
-  // const l = `$$\\frac_{1}{2}$$`;
-
   return (
     <div style={{ height: "90vh", width: "100%" }}>
       <Box
@@ -212,6 +247,7 @@ export default function ChatBox() {
             Ask your doubts below!
           </h1>
         </Box>
+
         <Box
           sx={{
             width: "100%",
@@ -512,8 +548,6 @@ export default function ChatBox() {
                 onClick={omega}
                 startIcon={<Avatar src={"bigOmega.png"} />}
               ></Button>
-              {/* <Button variant="outlined: url(1200px-Greek_uc_sigma.svg.png)" ></Button>  */}
-              {/* <Latex>{`Hello $x^2$ value $\\frac{1}{2}$ and $\\sum_{n=1}^{\infty} 2^{-n}$`}</Latex> */}
             </Box>
           </Box>
         </Box>
