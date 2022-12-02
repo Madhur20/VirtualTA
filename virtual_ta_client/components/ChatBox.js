@@ -187,7 +187,7 @@ export default function ChatBox() {
       await sleep(1000);
 
       const ans = await fetch(
-        "https://virtual-ta-server.herokuapp.com/" + question
+        "https://virtual-ta-render.onrender.com/" + question
       )
         .then((res) => res.json())
         .then((jsonRes) => {
